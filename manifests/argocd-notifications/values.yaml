@@ -2,7 +2,7 @@ argocd-notifications:
   argocdUrl: https://argocd.apps.blah.cloud
   image:
     repository: mylesagray/argocd-notifications
-    tag: v1.0.1
+    tag: v1.0.2
   secret:
     create: false
   notifiers:
@@ -19,7 +19,7 @@ argocd-notifications:
       enabled: true
       image:
         repository: mylesagray/argocd-notifications
-        tag: v1.0.1
+        tag: v1.0.2
   triggers:
     trigger.on-deployed: |
       - description: Application is synced and healthy. Triggered once per commit.
