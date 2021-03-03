@@ -5,7 +5,7 @@ argo-cd:
   global:
     image:
       repository: alinbalutoiu/argocd
-      tag: v1.8.5
+      tag: v1.8.6
     imagePullSecrets: 
       - name: docker-creds
   dex:
