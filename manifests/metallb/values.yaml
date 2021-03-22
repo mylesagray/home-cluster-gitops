@@ -4,7 +4,7 @@ metallb:
   controller:
     image:
       repository: metallb/controller
-      tag: v0.9.5
+      tag: v0.9.6
   speaker:
     image:
       repository: metallb/speaker
