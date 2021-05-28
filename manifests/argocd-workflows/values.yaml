@@ -1,4 +1,4 @@
-argo:
+argo-workflows:
   workflow:
     serviceAccount:
       create: true
@@ -35,19 +35,3 @@ argo:
         name: argo-workflows-minio
       secretKeySecret:
         name: argo-workflows-minio
-  minio:
-    install: true
-    defaultBucket:
-      enabled: true
-      name: argo-artifacts
-    tolerations:
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/master
-    existingSecret: argo-workflows-minio
-    ingress:
-      enabled: true
-      hosts:
-      - minio.apps.blah.cloud
-    resources:
-      requests:
-        memory: 2Gi
