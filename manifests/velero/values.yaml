@@ -1,6 +1,4 @@
 velero:
-  image:
-    tag: v1.5.3
   configuration:
     provider: aws
     backupStorageLocation:
@@ -31,8 +29,6 @@ velero:
       labels:
         velero.io/plugin-config: ""
         velero.io/restic: RestoreItemAction
-      data:
-        image: velero/velero-restic-restore-helper:v1.5.2
   schedules:
     daily:
       schedule: 0 0 * * *
@@ -46,8 +42,6 @@ velero:
         ttl: 24h
   initContainers:
   - name: velero-plugin-for-aws
-    image: velero/velero-plugin-for-aws:main
-    imagePullPolicy: IfNotPresent
     volumeMounts:
       - mountPath: /target
         name: plugins
