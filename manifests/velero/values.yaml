@@ -1,4 +1,5 @@
 velero:
+  upgradeCRDs: false
   configuration:
     provider: aws
     backupStorageLocation:
