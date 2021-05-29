@@ -70,7 +70,6 @@ make cleanup
 
 * Build ARM versions of containers I depend on
   * Do it scalably and open upstream PRs
-    * Argocd-notifications PR: <https://github.com/argoproj-labs/argocd-notifications/pull/184>
 * Add Argo Workflows
 * Add Argo Events
 * Add Argo Rollouts
