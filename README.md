@@ -1,6 +1,6 @@
 # K8s cluster bootstrap and app install
 
-[![ArgoCD Status](https://argocd.apps.blah.cloud/api/badge?name=bootstrap-cluster&revision=true)](https://argocd.apps.blah.cloud/applications/bootstrap-cluster)
+[![ArgoCD Status](https://argocd.apps.blah.cloud/api/badge?name=bootstrap&revision=true)](https://argocd.apps.blah.cloud/applications/bootstrap)
 
 ## Bitnami Sealed Secrets
 
