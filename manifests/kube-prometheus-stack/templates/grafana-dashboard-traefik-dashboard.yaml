@@ -1,4 +1,9 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    grafana_dashboard: "1"
+  name: grafana-dashboard-traefik-dashboard
 data:
   traefik-dashboard.json: |-
     {
@@ -2056,8 +2061,3 @@ data:
         "title": "Traefik",
         "version": 1
     }
-kind: ConfigMap
-metadata:
-  labels:
-    grafana_dashboard: "1"
-  name: grafana-dashboard-traefik-dashboard

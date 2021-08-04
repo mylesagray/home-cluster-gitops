@@ -1,4 +1,9 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    grafana_dashboard: "1"
+  name: grafana-dashboard-kubernetes-cluster-dashboard
 data:
   kubernetes-cluster-dashboard.json: |-
     {
@@ -2082,8 +2087,3 @@ data:
         "title": "Kubernetes cluster monitoring (via Prometheus)",
         "version": 1
     }
-kind: ConfigMap
-metadata:
-  labels:
-    grafana_dashboard: "1"
-  name: grafana-dashboard-kubernetes-cluster-dashboard
