@@ -6,7 +6,7 @@ metadata:
   name: grafana-dashboard-traefik-dashboard
 data:
   traefik-dashboard.json: |-
-    {
+    {{`{
         "annotations": {
             "list": [
                 {
@@ -2060,4 +2060,4 @@ data:
         "timezone": "",
         "title": "Traefik",
         "version": 1
-    }
+    }`}}
