@@ -1,0 +1,12 @@
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/mylesagray/home-cluster-gitops.git'
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: monitoring-test
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

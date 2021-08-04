@@ -1,0 +1,5 @@
+apiVersion: v2
+appVersion: "1.0"
+description: "Cluster Bootstrap"
+name: bootstrap
+version: 0.1.0

@@ -1,0 +1,86 @@
+kube-prometheus-stack:
+  grafana:
+    ingress:
+      enabled: true
+      hosts:
+      - grafana.test.apps.blah.cloud
+    persistence:
+      type: pvc
+      enabled: true
+      accessModes:
+        - ReadWriteOnce
+      size: 10Gi
+    deploymentStrategy:
+      type: Recreate
+    grafana.ini:
+      server:
+        root_url: https://grafana.test.apps.blah.cloud
+      auth.generic_oauth:
+        enabled: true
+        name: "SSO"
+        client_id: "grafana.test.apps.blah.cloud"
+        client_secret: "e44e4dcc-06a2-4d67-9e28-1f17a39c91b2"
+        auth_url: "https://sso.test.apps.blah.cloud/auth/realms/development/protocol/openid-connect/auth"
+        token_url: "https://sso.test.apps.blah.cloud/auth/realms/development/protocol/openid-connect/token"
+        api_url: "https://sso.test.apps.blah.cloud/auth/realms/development/protocol/openid-connect/userinfo"
+        allow_sign_up: true
+        email_attribute_name: email
+        scopes: "openid profile email"
+  prometheus:
+    thanosService:
+      enabled: true
+    thanosServiceExternal:
+      enabled: true
+    ingress:
+      enabled: true
+      hosts:
+      - prometheus.test.apps.blah.cloud
+      pathType: Prefix
+    thanosIngress:
+      enabled: true
+      hosts:
+      - thanos.test.apps.blah.cloud
+      pathType: Prefix
+    prometheusSpec:
+      secrets: ['kube-etcd-client-certs']
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            accessModes: [ "ReadWriteOnce" ]
+            resources:
+              requests:
+                storage: 50Gi
+      serviceMonitorSelectorNilUsesHelmValues: false
+      podMonitorSelectorNilUsesHelmValues: false
+      securityContext:
+        runAsNonRoot: false
+        runAsGroup: 0
+        runAsUser: 0
+        fsGroup: 0
+  kubeEtcd:
+    serviceMonitor:
+      scheme: https
+      caFile: /etc/prometheus/secrets/kube-etcd-client-certs/etcd-client-ca.crt
+      certFile: /etc/prometheus/secrets/kube-etcd-client-certs/etcd-client.crt
+      keyFile: /etc/prometheus/secrets/kube-etcd-client-certs/etcd-client.key
+      insecureSkipVerify: true
+  kubeScheduler:
+    service:
+      port: 10259
+      targetPort: 10259
+    serviceMonitor:
+      https: true
+      insecureSkipVerify: true
+  kubeControllerManager:
+    service:
+      port: 10257
+      targetPort: 10257
+    serviceMonitor:
+      https: true
+      insecureSkipVerify: true
+  alertmanager:
+    ingress:
+      enabled: true
+      hosts:
+      - alertmanager.test.apps.blah.cloud
+      pathType: Prefix
