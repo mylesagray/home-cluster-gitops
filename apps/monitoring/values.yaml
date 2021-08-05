@@ -5,7 +5,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: monitoring-test
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true

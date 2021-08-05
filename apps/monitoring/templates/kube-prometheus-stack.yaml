@@ -18,7 +18,7 @@ spec:
         - values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: monitoring-test
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
