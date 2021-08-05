@@ -25,7 +25,7 @@ argo-cd:
   controller:
     extraArgs:
     - --repo-server-timeout-seconds
-    - "500"
+    - "1000"
     - --status-processors
     - "10"
     - --operation-processors
