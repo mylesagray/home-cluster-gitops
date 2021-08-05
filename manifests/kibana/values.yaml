@@ -1,0 +1,13 @@
+kibana:
+  ingress:
+    enabled: true
+    hosts:
+      - host: kibana.apps.blah.cloud
+        paths:
+        - path: /
+  # resources:
+  #   requests:
+  #     cpu: null
+  #   limits:
+  #     cpu: null
+  elasticsearchHosts: "https://es.apps.blah.cloud"
