@@ -89,9 +89,6 @@ argo-cd:
           - type: helm
             url: https://argoproj.github.io/argo-helm
             name: argo
-          - type: helm
-            url: https://charts.helm.sh/stable
-            name: stable
         repository.credentials: |
           - url: https://github.com/mylesagray
             passwordSecret:
