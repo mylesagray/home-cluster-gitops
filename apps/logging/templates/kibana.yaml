@@ -1,8 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-notifications
+  name: kibana
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,14 +12,16 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: manifests/argocd-notifications
+    path: manifests/kibana
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: argocd
+    namespace: kibana
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

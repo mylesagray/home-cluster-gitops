@@ -84,6 +84,9 @@ make cleanup
   * Add KNative (needs ARM builds - <https://github.com/knative/serving/issues/8320>)
   * All above rely on ko builds for ARM: <https://github.com/google/ko/pull/211>
 * Move from traefik to nginx + cert-manager for ingress and TLS
+  * Traefik HA mode?
+    * <https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>
+    * <https://github.com/MySocialApp/kubernetes-helm-chart-traefik>
 
 ### Organisational
 

@@ -1,8 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minio
+  name: nfs-subdir-external-provisioner
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,16 +12,16 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: manifests/minio
+    path: manifests/nfs-subdir-external-provisioner
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: minio
+    namespace: {{ .Values.spec.destination.namespace }}
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true

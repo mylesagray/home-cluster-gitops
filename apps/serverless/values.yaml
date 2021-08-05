@@ -5,7 +5,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: quake
+    namespace: knative
   syncPolicy:
     automated:
       prune: true

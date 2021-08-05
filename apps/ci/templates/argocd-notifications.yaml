@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: fluent-bit
+  name: argocd-notifications
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "4"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -12,14 +12,16 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: manifests/fluent-bit
+    path: manifests/argocd-notifications
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: logging
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
