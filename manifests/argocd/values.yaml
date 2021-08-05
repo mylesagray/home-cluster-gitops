@@ -31,10 +31,10 @@ argo-cd:
     - --operation-processors
     - "5"
   repoServer:
-    replicas: 3
+    replicas: 5
     env:
       - name: "ARGOCD_EXEC_TIMEOUT"
-        value: "5m"
+        value: "15m"
   server:
     extraArgs:
     - --insecure
