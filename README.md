@@ -70,11 +70,10 @@ make cleanup
 
 * Build ARM versions of containers I depend on
   * Do it scalably and open upstream PRs
-* Add Argo Workflows
 * Add Argo Events
 * Add Argo Rollouts
 * Investigate Argo Operator
-* Add kube-prometheus
+* Add carlosedp Cluster Dashboard to Grafana
 * Add Renovate self-hosted
 * Add OIDC provider
 * Move to kube-vip from metallb
@@ -91,9 +90,7 @@ make cleanup
 ### Organisational
 
 * Refactor namespaces
-* Refactor App hierarchy
 * Refactor Apps into Projects
-* Use sync waves
 * Deploy from tags/branches rather than master
 
 ### Security

@@ -68,7 +68,7 @@ fluent-bit:
       [OUTPUT]
           Name es
           Match kube.*
-          Host es.belfast.blah.cloud
+          Host es.apps.blah.cloud
           Retry_Limit 10
           Replace_Dots On
           Trace_Error On
@@ -76,7 +76,7 @@ fluent-bit:
       [OUTPUT]
           Name es
           Match host.*
-          Host es.belfast.blah.cloud
+          Host es.apps.blah.cloud
           Logstash_Prefix node
           Retry_Limit 10
           Trace_Error On
