@@ -86,9 +86,6 @@ argo-cd:
             - '*'
         repositories: |
           - url: https://github.com/mylesagray/home-cluster-gitops.git
-          - type: helm
-            url: https://argoproj.github.io/argo-helm
-            name: argo
         repository.credentials: |
           - url: https://github.com/mylesagray
             passwordSecret:
