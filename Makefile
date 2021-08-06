@@ -5,9 +5,7 @@ list:
 
 get-argocd-password:
 	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=300s
-	echo "ArgoCD Password: "
 	kubectl get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d
-	echo ""
 
 install-argocd:
 	kubectl create ns argocd || true
