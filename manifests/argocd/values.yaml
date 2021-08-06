@@ -98,6 +98,19 @@ argo-cd:
       policy.default: role:readonly
       policy.csv: |
         g, blahcloud:k8s, role:admin
+    additionalProjects: 
+    - name: default
+      namespace: argocd
+      additionalAnnotations: 
+        notifications.argoproj.io/subscribe.on-sync-succeeded.slack: kubernetes
+      sourceRepos:
+      - '*'
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+      destinations:
+      - namespace: '*'
+        server: '*'
     additionalApplications:
     - name: bootstrap
       namespace: argocd
