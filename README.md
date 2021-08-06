@@ -54,7 +54,6 @@ kubectl apply -f manifests/argocd-workflows/templates/
 ```sh
 make install-argocd
 make get-argocd-password
-make check-argocd-ready
 ```
 
 ## Use

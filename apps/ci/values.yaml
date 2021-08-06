@@ -1,5 +1,5 @@
 spec:
-  project: ci
+  project: cd
   source:
     repoURL: 'https://github.com/mylesagray/home-cluster-gitops.git'
     targetRevision: HEAD

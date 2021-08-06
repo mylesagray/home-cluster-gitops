@@ -111,6 +111,18 @@ argo-cd:
       destinations:
       - namespace: '*'
         server: '*'
+    - name: cd
+      namespace: argocd
+      additionalAnnotations: 
+        notifications.argoproj.io/subscribe.on-sync-succeeded.slack: kubernetes
+      sourceRepos:
+      - '*'
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+      destinations:
+      - namespace: '*'
+        server: '*'
     additionalApplications:
     - name: bootstrap
       namespace: argocd
