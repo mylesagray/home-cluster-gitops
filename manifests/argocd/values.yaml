@@ -77,7 +77,7 @@ argo-cd:
             ignoreDifferences: |
               jsonPointers:
               - /webhooks/0/clientConfig/caBundle
-          extensions/Ingress:
+          networking.k8s.io/Ingress:
             health.lua: |
               hs = {}
               hs.status = "Healthy"
