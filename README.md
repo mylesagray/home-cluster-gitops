@@ -58,6 +58,7 @@ kubectl delete pod -n kube-system -l app.kubernetes.io/name=sealed-secrets
 ## Initialise secrets needed for bootstrap
 
 ```sh
+kubectl create ns argocd
 kubectl apply -f manifests/argocd-notifications/templates/
 kubectl apply -f manifests/argocd-workflows/templates/
 ```
