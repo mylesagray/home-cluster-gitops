@@ -13,24 +13,24 @@ helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets 
 ### Seal secrets
 
 ```sh
-kubeseal --format=yaml < ~/Desktop/docker-creds.yaml > manifests/registry-creds/docker-creds-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/argocd-secret.yaml > manifests/argocd/templates/argocd-sealed-secret.yaml
-kubeseal --format=yaml < ~/Desktop/argocd-github-secret.yaml > manifests/argocd/templates/argocd-github-sealed-secret.yaml
-kubeseal --format=yaml < ~/Desktop/argocd-rak8s-secret.yaml > manifests/argocd/templates/argocd-rak8s-sealed-secret.yaml
-kubeseal --format=yaml < ~/Desktop/traefik-dnsprovider-config.yaml > manifests/traefik/templates/traefik-dnsprovider-config-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/argocd-notifications-secret.yaml > manifests/argocd-notifications/templates/argocd-notifications-secret-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/renovate-secret.yaml > manifests/renovate/templates/renovate-sealed-secret.yaml
-kubeseal --format=yaml < ~/Desktop/keycloak-secret.yaml > manifests/keycloak/templates/keycloak-secret-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/keycloak-postgres-secret.yaml > manifests/keycloak/templates/keycloak-postgres-secret-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/argo-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/argocd-workflows-minio.yaml  > manifests/argocd-workflows/templates/argocd-workflows-minio-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/docker-creds.yaml > manifests/registry-creds/docker-creds-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-secret.yaml > manifests/argocd/templates/argocd-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-github-secret.yaml > manifests/argocd/templates/argocd-github-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-rak8s-secret.yaml > manifests/argocd/templates/argocd-rak8s-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/traefik-dnsprovider-config.yaml > manifests/traefik/templates/traefik-dnsprovider-config-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-notifications-secret.yaml > manifests/argocd-notifications/templates/argocd-notifications-secret-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/renovate-secret.yaml > manifests/renovate/templates/renovate-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/keycloak-secret.yaml > manifests/keycloak/templates/keycloak-secret-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/keycloak-postgres-secret.yaml > manifests/keycloak/templates/keycloak-postgres-secret-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-workflows-minio.yaml  > manifests/argocd-workflows/templates/argocd-workflows-minio-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 ```
 
 ### Backup seal key
 
 ```sh
-kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/sealed-secrets-master.key
+kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 ```
 
 ## Restore Bitnami SS from backup (if bad things happened)
@@ -38,7 +38,7 @@ kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-ke
 ```sh
 helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets -f manifests/sealed-secrets/values.yaml
 kubectl delete secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key=active
-kubectl apply -n kube-system -f ~/Desktop/sealed-secrets-master.key
+kubectl apply -n kube-system -f ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 kubectl delete pod -n kube-system -l app.kubernetes.io/name=sealed-secrets
 ```
 
