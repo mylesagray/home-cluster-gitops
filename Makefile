@@ -22,9 +22,9 @@ install-cert-manager:
 	kubectl apply -f resources/letsencrypt-issuer.yaml
 
 cleanup:
-	helm delete argocd || true
 	kubectl delete appprojects.argoproj.io --all
 	kubectl delete applications.argoproj.io --all
+	helm delete argocd || true
 	kubectl delete -f https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/crds/appproject-crd.yaml
 	kubectl delete -f https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/crds/application-crd.yaml
 	kubectl delete ns argocd
