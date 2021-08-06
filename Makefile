@@ -51,3 +51,4 @@ cleanup:
 	kubectl delete ns velero || true
 	kubectl delete ns auth || true
 	kubectl delete ns registry-creds-system || true
+	kubectl delete crd --all || true
