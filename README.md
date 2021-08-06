@@ -24,6 +24,7 @@ kubeseal --format=yaml < ~/Desktop/keycloak-secret.yaml > manifests/keycloak/tem
 kubeseal --format=yaml < ~/Desktop/keycloak-postgres-secret.yaml > manifests/keycloak/templates/keycloak-postgres-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/argo-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/argocd-workflows-minio.yaml  > manifests/argocd-workflows/templates/argocd-workflows-minio-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 ```
 
 ### Backup seal key
