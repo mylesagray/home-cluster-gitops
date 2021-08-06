@@ -22,15 +22,30 @@ install-cert-manager:
 	kubectl apply -f resources/letsencrypt-issuer.yaml
 
 cleanup:
-	kubectl delete appprojects.argoproj.io --all
-	kubectl delete applications.argoproj.io --all
 	helm delete argocd || true
-	kubectl delete -f https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/crds/appproject-crd.yaml
-	kubectl delete -f https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/crds/application-crd.yaml
-	kubectl delete ns argocd
-	kubectl delete ns infra
-	kubectl delete ns cheese
-	kubectl delete ns ingress
-	kubectl delete ns kubernetes-dashboard
-	kubectl delete ns velero
-	kubectl delete ns registry-creds-system
+	kubectl get applications.argoproj.io -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch applications.argoproj.io {} -p '{"metadata":{"finalizers":[]}}' --type=merge
+	kubectl get appprojects.argoproj.io -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch appprojects.argoproj.io {} -p '{"metadata":{"finalizers":[]}}' --type=merge
+	kubectl delete appprojects.argoproj.io --all || true
+	kubectl delete applications.argoproj.io --all || true
+	kubectl delete crd applications.argoproj.io || true
+	kubectl delete crd appprojects.argoproj.io || true
+	kubectl delete ns argocd || true
+	kubectl delete ns infra || true
+	kubectl delete ns buildkit || true
+	kubectl delete ns buildkit-emu || true
+	kubectl delete ns cheese || true
+	kubectl delete ns ingress || true
+	kubectl delete ns keycloak || true
+	kubectl delete ns kibana || true
+	kubectl delete ns elasticsearch || true
+	kubectl delete ns kibana || true
+	kubectl delete ns logging || true
+	kubectl delete ns minio || true
+	kubectl delete ns monitoring || true
+	kubectl delete ns qemu-binfmt || true
+	kubectl delete ns quake || true
+	kubectl delete ns renovate || true
+	kubectl delete ns storage || true
+	kubectl delete ns kubernetes-dashboard || true
+	kubectl delete ns velero || true
+	kubectl delete ns registry-creds-system || true
