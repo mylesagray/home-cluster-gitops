@@ -1,7 +1,9 @@
-.PHONY: install-argocd get-argocd-password proxy-argocd-ui check-argocd-ready
+.PHONY: install-prereqs install-argocd get-argocd-password
 
 list:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+
+fresh: install-prereqs install-argocd get-argocd-password
 
 get-argocd-password:
 	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=300s
