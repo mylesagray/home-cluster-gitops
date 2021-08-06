@@ -53,3 +53,4 @@ cleanup:
 	kubectl delete ns auth || true
 	kubectl delete ns registry-creds-system || true
 	kubectl delete crd --all || true
+	kubectl delete all -l app.kubernetes.io/managed-by=Helm -A || true
