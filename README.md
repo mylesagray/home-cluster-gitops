@@ -2,6 +2,19 @@
 
 [![ArgoCD Status](https://argocd.apps.blah.cloud/api/badge?name=bootstrap&revision=true)](https://argocd.apps.blah.cloud/applications/bootstrap)
 
+## Install Prometheus CRDs
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
+```
+
 ## Bitnami Sealed Secrets
 
 ### Install Sealed Secrets
@@ -22,7 +35,7 @@ kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-notifications-secret.y
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/renovate-secret.yaml > manifests/renovate/templates/renovate-sealed-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/keycloak-secret.yaml > manifests/keycloak/templates/keycloak-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/keycloak-postgres-secret.yaml > manifests/keycloak/templates/keycloak-postgres-secret-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-workflows-minio.yaml  > manifests/argocd-workflows/templates/argocd-workflows-minio-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 ```

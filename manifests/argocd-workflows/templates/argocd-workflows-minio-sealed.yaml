@@ -1,0 +1,21 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: argo-workflows-minio
+  namespace: argocd
+spec:
+  encryptedData:
+    accesskey: AgAYZRlWACcOOzW6c9IIsFbqGwD0Je8q7aBoasgJM3/uknXtSpBDRuqypAjUgfplfVLyKxJyQrLFXgP6Eko73vyx/0gImCP2X5gnskL+REAsTtDOhEXEBrqJkKEOOx5eYJQKvGF4lRA+K8jA/OB/Rz75QPmrSxmr0fk3xfMmwRRUHlRb8l0+v4bVVpbAVyYC8MuClTrrL+qdc3OLTtO8OD0/uluqseWCB7GWjM/pla3AM631fm9EjIeWEQBtdIrpPXenuRtxfkGmDH67lZhzjZA/rdE5JldUouoZ2hXu5P2i5rW65xNA2+kwNAoKXJ43zPNglHz3Ufh4UFvLVw6vt0onk7UuWv8iXv1oeQTp7RB/3av6MLrm0s3d3M3wOGXYutkVTiPVp6eMtyZcqUb11lf55xsKlvH0TkFQEDElHhLraOTsJEg0vFV2hwtTZlpJuGZgGLQoqQM8euvzENw1q2JdW1bPn2xACuh00s4nEoX2AhEiptxNi6Zbls5Xxlp1I4JJm/BY6Aieq+J5zf1ruuT4FpCnkWVYqN99mDjEHMkbM5OdHqzUAIwMydmslSJAo/VVohsrW/Udy5vCNeKE7xuYfTTqaE3FKSGwX5EksxRtx+FK1yqFFaiZndqOeT7t/fibW/qlFxABYv1mQ0vbzve8O1kgzJVxI3UmcJHrl4D8hwO6oE+tXx66W1zvHk5lk8vmoS+feM0A4zvxaGfDhbzZ19Xkvg==
+    secretkey: AgAPVbjNGwWVkSVll8CflN8MVMjrbiQKObSBMgEwxCCU6dIDKu0zc0fWSg3jYvy5dRVoZFN2ewPgVzYIWb7YDBpMSA2u/8zgKRFjz+v9gWCxZhR5lEVLLWHsGYyc+yJzWPBbwuRrGeEL8VonkaVNHcIH5yaouLhGHqGS7PXCQMXfFU0pfsCGqY/Lg+zalZDyKOb5w0YFKe/rbGQ80aVMlKroYYgC6bsgDMozBzINfH1o9+WfUvUd9+dzD4ICS6DYwNkGiNLHpAVqToRJ/ZkurOB03/LJ///6MkTv0O/CFW8OczcpLshnAsBXg+EwQcmWZ+kjJiLICGFMHTUf68pSEYvDQ/CbAXUJtAG0Hn0u9rKHFpcmOMSlerH/3Nt6+mEWT/TAlc4CREQK17oW0vlTxlLlvO7RfvFyfOUCfZCoZbTpx6KHyRdnHTWfmceeyhnsEfOml56UI5z8UEixO5CmGwwZ68WWzJl4zvo0dgBErNQk3910wXcspR1FVesag7QIlkcwPpuZXkSEoK6jye2/BZNkc46+kc/CzCe20E+E2VVjm4C0dw/dxR76ESkxmKrVNT/ShMA8Vxo22TL2ZMCI7DiV3jN/vLk2JMjdwjC2N1+0ECcy6drb6qnbWsBRo1GDxEzwJB3tXaFij7llHu98tqZuxw7oBaPAoirv865BE60D0AnpWhyL4IlRgIsHEPGhT7OcnQMsi0j6L2ef/SsmL0jnLZLq5DgKyHhB5L9JVe1JTOIWFv9oeyla
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: minio
+        argocd.argoproj.io/instance: argocd-workflows
+      name: argo-workflows-minio
+      namespace: argocd
+    type: Opaque
+
