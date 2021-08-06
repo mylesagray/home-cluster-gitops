@@ -1,9 +1,9 @@
-.PHONY: install-prereqs install-argocd get-argocd-password
+.PHONY: install-prereqs install-argocd get-argocd-password proxy-argocd
 
 list:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
-fresh: install-prereqs install-argocd get-argocd-password
+fresh: install-prereqs install-argocd get-argocd-password proxy-argocd
 
 get-argocd-password:
 	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=300s
@@ -85,3 +85,6 @@ cleanup:
 	kubectl delete crd --all || true
 	kubectl delete all -l app.kubernetes.io/managed-by=Helm -A || true
 	kubectl delete all -n default --all || true
+
+proxy-argocd:
+	kubectl port-forward service/argocd-server 8080:80
