@@ -2,7 +2,14 @@
 
 [![ArgoCD Status](https://argocd.apps.blah.cloud/api/badge?name=bootstrap&revision=true)](https://argocd.apps.blah.cloud/applications/bootstrap)
 
-## Install Prometheus CRDs
+## TL;DR
+
+```sh
+make fresh
+```
+
+## Manual Install
+### Install Prometheus CRDs
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
@@ -15,15 +22,15 @@ kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheu
 kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
 ```
 
-## Bitnami Sealed Secrets
+### Bitnami Sealed Secrets
 
-### Install Sealed Secrets
+#### Install Sealed Secrets
 
 ```sh
 helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets -f manifests/sealed-secrets/values.yaml
 ```
 
-### Seal secrets
+#### Seal secrets
 
 ```sh
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/docker-creds.yaml > manifests/registry-creds/docker-creds-sealed.yaml
@@ -41,13 +48,13 @@ kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-minio-minio.ya
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 ```
 
-### Backup seal key
+#### Backup seal key
 
 ```sh
 kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 ```
 
-## (Optional) Restore Bitnami SS from backup - if bad things happened...
+### (Optional) Restore Bitnami SS from backup - if bad things happened...
 
 ```sh
 helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets -f manifests/sealed-secrets/values.yaml
@@ -56,7 +63,7 @@ kubectl apply -n kube-system -f ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.
 kubectl delete pod -n kube-system -l app.kubernetes.io/name=sealed-secrets
 ```
 
-## Initialise secrets needed for bootstrap
+### Initialise secrets needed for bootstrap
 
 ```sh
 kubectl create ns argocd
@@ -64,7 +71,7 @@ kubectl apply -f manifests/argocd-notifications/templates/
 kubectl apply -f manifests/argocd-workflows/templates/
 ```
 
-## Install Argo and bootstrap cluster
+### Install Argo and bootstrap cluster
 
 ```sh
 make install-argocd

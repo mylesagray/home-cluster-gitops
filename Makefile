@@ -7,7 +7,7 @@ fresh: install-prereqs install-argocd get-argocd-password proxy-argocd login-arg
 
 get-argocd-password:
 	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=300s
-	$(eval ARGOPW := $(shell kubectl get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d))
+	$(eval ARGOPW := $(shell until kubectl get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d; do sleep 5; done))
 	echo ArgoCD password is: $(ARGOPW)
 	$(MAKE) login-argocd ARGOPW=${ARGOPW}
 
