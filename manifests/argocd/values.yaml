@@ -25,13 +25,13 @@ argo-cd:
   controller:
     extraArgs:
     - --repo-server-timeout-seconds
-    - "1800"
+    - "1000"
     - --status-processors
-    - "3"
+    - "10"
     - --operation-processors
-    - "3"
+    - "5"
   repoServer:
-    replicas: 3
+    replicas: 4
     env:
       - name: "ARGOCD_EXEC_TIMEOUT"
         value: "15m"
