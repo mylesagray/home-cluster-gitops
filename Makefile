@@ -54,13 +54,13 @@ install-cert-manager:
 cleanup:
 	helm delete -n argocd argocd || true
 	helm delete -n kube-system sealed-secrets || true
-	kubectl get apiservice | grep False | awk '{print $1}' | xargs -I {} kubectl delete apiservice {}
 	kubectl get applications.argoproj.io -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch applications.argoproj.io {} -p '{"metadata":{"finalizers":[]}}' --type=merge
 	kubectl get appprojects.argoproj.io -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch appprojects.argoproj.io {} -p '{"metadata":{"finalizers":[]}}' --type=merge
 	kubectl delete appprojects.argoproj.io --all || true
 	kubectl delete applications.argoproj.io --all || true
 	kubectl delete crd applications.argoproj.io || true
 	kubectl delete crd appprojects.argoproj.io || true
+	kubectl delete apiservice v1beta1.metrics.k8s.io || true
 	kubectl delete ns argocd || true
 	kubectl delete ns infra || true
 	kubectl delete ns buildkit || true
@@ -78,10 +78,11 @@ cleanup:
 	kubectl delete ns quake || true
 	kubectl delete ns renovate || true
 	kubectl delete ns storage || true
-	kubectl delete ns kubernetes-dashboard || true
 	kubectl delete ns velero || true
 	kubectl delete ns auth || true
 	kubectl delete ns registry-creds-system || true
+	kubectl delete ns kubernetes-dashboard || true
+	kubectl get apiservice | grep False | awk '{print $1}' | xargs -I {} kubectl delete apiservice {}
 	kubectl delete crd --all || true
 	kubectl delete all -l app.kubernetes.io/managed-by=Helm -A || true
 	kubectl delete all -n default --all || true
