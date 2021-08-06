@@ -33,7 +33,7 @@ install-prereqs:
 	kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-minio.yaml  > manifests/argocd-workflows/templates/argo-workflows-minio-sealed.yaml
 	kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 	kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
-	kubectl create ns argocd
+	kubectl create ns argocd || true
 	kubectl apply -f manifests/argocd-notifications/templates/
 	kubectl apply -f manifests/argocd-workflows/templates/
 
