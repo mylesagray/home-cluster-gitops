@@ -1,13 +1,20 @@
-.PHONY: install-prereqs install-argocd get-argocd-password proxy-argocd
+.PHONY: install-prereqs install-argocd get-argocd-password proxy-argocd login-argocd watch-apps
 
 list:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
-fresh: install-prereqs install-argocd get-argocd-password proxy-argocd
+fresh: install-prereqs install-argocd get-argocd-password proxy-argocd login-argocd watch-apps
 
 get-argocd-password:
 	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=300s
-	kubectl get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d
+	ARGOPW=kubectl get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d
+	echo $ARGOPW
+
+login-argocd:
+	argocd login localhost:8080 --username=admin --password=$ARGOPW
+
+watch-apps:
+	watch -n 1 argocd app list
 
 install-prereqs:
 	kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.49.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
@@ -88,4 +95,4 @@ cleanup:
 	kubectl delete all -n default --all || true
 
 proxy-argocd:
-	kubectl port-forward service/argocd-server 8080:80
+	kubectl port-forward service/argocd-server 8080:80 &
