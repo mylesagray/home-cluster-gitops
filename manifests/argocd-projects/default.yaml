@@ -4,6 +4,7 @@ metadata:
   name: default
   namespace: argocd
   annotations:
+    argocd.argoproj.io/sync-wave: "-1"
     notifications.argoproj.io/subscribe.on-sync-succeeded.slack: kubernetes
 spec:
   sourceRepos:

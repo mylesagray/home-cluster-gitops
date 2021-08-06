@@ -33,13 +33,20 @@ kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests
 kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 ```
 
-## Restore Bitnami SS from backup (if bad things happened)
+## (Optional) Restore Bitnami SS from backup - if bad things happened...
 
 ```sh
 helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets -f manifests/sealed-secrets/values.yaml
 kubectl delete secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key=active
 kubectl apply -n kube-system -f ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 kubectl delete pod -n kube-system -l app.kubernetes.io/name=sealed-secrets
+```
+
+## Initialise secrets needed for bootstrap
+
+```sh
+kubectl apply -f manifests/argocd-notifications/templates/
+kubectl apply -f manifests/argocd-workflows/templates/
 ```
 
 ## Install Argo and bootstrap cluster

@@ -49,7 +49,7 @@ argo-cd:
         - argocd.apps.blah.cloud
         https: false
     config:
-        admin.enabled: 'false'
+        admin.enabled: 'true'
         statusbadge.enabled: 'true'
         users.anonymous.enabled: 'true'
         url: https://argocd.apps.blah.cloud
