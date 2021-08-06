@@ -22,7 +22,8 @@ install-cert-manager:
 	kubectl apply -f resources/letsencrypt-issuer.yaml
 
 cleanup:
-	helm delete argocd || true
+	helm delete -n argocd argocd || true
+	helm delete -n kube-system sealed-secrets || true
 	kubectl get apiservice | grep False | awk '{print $1}' | xargs -I {} kubectl delete apiservice {}
 	kubectl get applications.argoproj.io -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch applications.argoproj.io {} -p '{"metadata":{"finalizers":[]}}' --type=merge
 	kubectl get appprojects.argoproj.io -o name | sed -e 's/.*\///g' | xargs -I {} kubectl patch appprojects.argoproj.io {} -p '{"metadata":{"finalizers":[]}}' --type=merge
