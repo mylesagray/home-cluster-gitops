@@ -26,10 +26,6 @@ argo-cd:
     extraArgs:
     - --repo-server-timeout-seconds
     - "1000"
-    - --status-processors
-    - "10"
-    - --operation-processors
-    - "5"
   repoServer:
     replicas: 4
     env:
