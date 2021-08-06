@@ -30,7 +30,7 @@ argo-cd:
     replicas: 4
     env:
       - name: "ARGOCD_EXEC_TIMEOUT"
-        value: "15m"
+        value: "5m"
   server:
     extraArgs:
     - --insecure
