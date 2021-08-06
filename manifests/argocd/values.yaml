@@ -86,6 +86,8 @@ argo-cd:
             - '*'
         repositories: |
           - url: https://github.com/mylesagray/home-cluster-gitops.git
+          - url: https://charts.helm.sh/stable
+            name: stable
         repository.credentials: |
           - url: https://github.com/mylesagray
             passwordSecret:
