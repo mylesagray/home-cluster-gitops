@@ -29,6 +29,8 @@ traefik:
     resolvers:
     - abby.ns.cloudflare.com
     - sid.ns.cloudflare.com
+    persistence:
+      storageClass: external-nfs
     dnsProvider:
       name: cloudflare
       existingSecretName: traefik-dnsprovider-config
