@@ -77,6 +77,11 @@ argo-cd:
             ignoreDifferences: |
               jsonPointers:
               - /webhooks/0/clientConfig/caBundle
+          extensions/Ingress:
+            health.lua: |
+              hs = {}
+              hs.status = "Healthy"
+              return hs
         resource.exclusions: |
           - apiGroups:
             - "velero.io"
