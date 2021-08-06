@@ -39,7 +39,7 @@ cleanup:
 	kubectl delete ns keycloak || true
 	kubectl delete ns kibana || true
 	kubectl delete ns elasticsearch || true
-	kubectl delete ns kibana || true
+	kubectl delete ns knative || true
 	kubectl delete ns logging || true
 	kubectl delete ns minio || true
 	kubectl delete ns monitoring || true
@@ -49,4 +49,5 @@ cleanup:
 	kubectl delete ns storage || true
 	kubectl delete ns kubernetes-dashboard || true
 	kubectl delete ns velero || true
+	kubectl delete ns auth || true
 	kubectl delete ns registry-creds-system || true
