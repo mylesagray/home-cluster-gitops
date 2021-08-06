@@ -11,7 +11,7 @@ get-argocd-password:
 	echo $ARGOPW
 
 login-argocd:
-	argocd login localhost:8080 --username=admin --password=$ARGOPW
+	argocd login localhost:8080 --insecure --username=admin --password=$ARGOPW
 
 watch-apps:
 	watch -n 1 argocd app list
