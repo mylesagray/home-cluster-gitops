@@ -6,8 +6,8 @@ list:
 fresh: install-prereqs install-argocd get-argocd-password proxy-argocd login-argocd watch-apps
 
 get-argocd-password:
-	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=300s
-	$(eval ARGOPW := $(shell kubectl get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d))
+	kubectl wait --for=condition=available deployment -l "app.kubernetes.io/name=argocd-server" -n argocd --timeout=600s
+	$(eval ARGOPW := $(shell kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d))
 	echo ArgoCD password is: $(ARGOPW)
 	$(MAKE) login-argocd ARGOPW=${ARGOPW}
 
@@ -43,6 +43,7 @@ install-prereqs:
 	kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 	kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 	kubectl create ns argocd || true
+	kubectl create ns minio || true
 	kubectl apply -f manifests/argocd-notifications/templates/
 	kubectl apply -f manifests/argocd-workflows/templates/
 
@@ -97,4 +98,4 @@ cleanup:
 	kubectl delete all -n default --all || true
 
 proxy-argocd:
-	kubectl port-forward service/argocd-server 8080:80 &
+	kubectl port-forward -n argocd service/argocd-server 8080:80 &
