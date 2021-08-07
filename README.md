@@ -105,6 +105,7 @@ make cleanup
 * Add carlosedp Cluster Dashboard to Grafana
 * Add Renovate self-hosted
 * Add OIDC provider
+  * Pinniped? <https://pinniped.dev>
 * Move to kube-vip from metallb
 * ARM Builds of complex tools
   * Add Istio (needs ARM builds - <https://github.com/istio/istio/issues/21094>)
