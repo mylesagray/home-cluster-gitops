@@ -2,6 +2,11 @@
 
 [![ArgoCD Status](https://argocd.apps.blah.cloud/api/badge?name=bootstrap&revision=true)](https://argocd.apps.blah.cloud/applications/bootstrap)
 
+## K8s cluster installed via Ansible
+
+<https://github.com/mylesagray/rak8s>
+
+Following on from cluster install, install apps as below.
 ## TL;DR
 
 ```sh
