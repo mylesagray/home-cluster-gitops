@@ -18,6 +18,8 @@ argo-cd:
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
+    exporter:
+      enabled: false
   dex:
     image:
       repository: dexidp/dex
