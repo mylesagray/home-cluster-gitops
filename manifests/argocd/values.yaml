@@ -9,9 +9,9 @@ argo-cd:
     imagePullSecrets: 
       - name: docker-creds
   redis:
-    enabled: false
-  redis-ha:
     enabled: true
+  redis-ha:
+    enabled: false
   dex:
     image:
       repository: dexidp/dex
