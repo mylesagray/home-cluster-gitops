@@ -10,8 +10,14 @@ argo-cd:
       - name: docker-creds
   redis:
     enabled: true
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
   redis-ha:
     enabled: false
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
   dex:
     image:
       repository: dexidp/dex
@@ -28,6 +34,9 @@ argo-cd:
           secretKeyRef:
             name: argo-workflows-sso
             key: client-secret
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
   controller:
     enableStatefulSet: true
     replicas: 1
@@ -49,6 +58,9 @@ argo-cd:
       rules:
         enabled: false
         spec: []
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
   repoServer:
     replicas: 4
     # autoscaling:
@@ -66,6 +78,9 @@ argo-cd:
     env:
       - name: "ARGOCD_EXEC_TIMEOUT"
         value: "5m"
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
   server:
     replicas: 1
     # autoscaling:
@@ -80,6 +95,9 @@ argo-cd:
         enabled: true
         interval: 15s
         namespace: monitoring
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
     extraArgs:
     - --insecure
     ingress:
