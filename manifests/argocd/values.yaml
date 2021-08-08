@@ -9,12 +9,12 @@ argo-cd:
     imagePullSecrets: 
       - name: docker-creds
   redis:
-    enabled: true
+    enabled: false
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
   redis-ha:
-    enabled: false
+    enabled: true
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
