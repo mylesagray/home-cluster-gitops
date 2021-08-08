@@ -23,7 +23,7 @@ traefik:
     keyType: RSA4096
     email: mg@mylesgray.com
     onHostRule: true
-    staging: false
+    staging: true
     logging: true
     delayBeforeCheck: 0
     resolvers:
