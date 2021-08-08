@@ -41,6 +41,9 @@ install-prereqs:
 	kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-minio.yaml  > manifests/argocd-workflows/templates/argo-workflows-minio-sealed.yaml
 	kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-minio-minio.yaml  > manifests/minio/templates/argo-workflows-minio-minio-sealed.yaml
 	kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
+	git add .
+	git commit -m "ArgoCD secret regen"
+	git push
 	kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 	kubectl create ns argocd || true
 	kubectl create ns minio || true
