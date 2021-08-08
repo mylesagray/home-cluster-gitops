@@ -41,13 +41,13 @@ argo-cd:
       key: node-role.kubernetes.io/master
   controller:
     enableStatefulSet: true
-    replicas: 1
+    replicas: 2
     args:
       statusProcessors: "20"
       operationProcessors: "10"
     env:
     - name: "ARGOCD_CONTROLLER_REPLICAS"
-      value: "1"
+      value: "2"
     extraArgs:
     - --repo-server-timeout-seconds
     - "1000"
@@ -84,7 +84,7 @@ argo-cd:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
   server:
-    replicas: 1
+    replicas: 3
     # autoscaling:
     #   enabled: false
     #   minReplicas: 1
