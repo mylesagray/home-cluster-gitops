@@ -2,7 +2,7 @@ cert-manager:
   namespace: cert-manager
   installCRDs: true
   prometheus:
-  enabled: true
-  servicemonitor:
     enabled: true
-    interval: 30s
+    servicemonitor:
+      enabled: true
+      interval: 30s
