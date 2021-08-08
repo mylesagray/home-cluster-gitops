@@ -9,9 +9,9 @@ argo-cd:
     imagePullSecrets: 
       - name: docker-creds
   redis:
-    enabled: false
-  redis-ha:
     enabled: true
+  redis-ha:
+    enabled: false
   dex:
     image:
       repository: dexidp/dex
@@ -30,13 +30,13 @@ argo-cd:
             key: client-secret
   controller:
     enableStatefulSet: true
-    replicas: 2
+    replicas: 1
     args:
       statusProcessors: "20"
       operationProcessors: "10"
     env:
     - name: "ARGOCD_CONTROLLER_REPLICAS"
-      value: "2"
+      value: "1"
     extraArgs:
     - --repo-server-timeout-seconds
     - "1000"
@@ -67,7 +67,7 @@ argo-cd:
       - name: "ARGOCD_EXEC_TIMEOUT"
         value: "5m"
   server:
-    replicas: 3
+    replicas: 1
     # autoscaling:
     #   enabled: false
     #   minReplicas: 1
