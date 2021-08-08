@@ -4,10 +4,14 @@ argo-cd:
       createSecret: false
   global:
     image:
-      repository: dragoneena12/argocd
-      tag: v2.0.4
+      repository: alinbalutoiu/argocd
+      tag: v2.0.3
     imagePullSecrets: 
       - name: docker-creds
+  redis:
+    enabled: false
+  redis-ha:
+    enabled: true
   dex:
     image:
       repository: dexidp/dex
@@ -16,6 +20,8 @@ argo-cd:
       enabled: true
       serviceMonitor:
         enabled: true
+        interval: 15s
+        namespace: monitoring
     env:
       - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
         valueFrom:
@@ -23,15 +29,57 @@ argo-cd:
             name: argo-workflows-sso
             key: client-secret
   controller:
+    enableStatefulSet: true
+    replicas: 1
+    args:
+      statusProcessors: "20"
+      operationProcessors: "10"
+    env:
+    - name: "ARGOCD_CONTROLLER_REPLICAS"
+      value: "1"
     extraArgs:
     - --repo-server-timeout-seconds
     - "1000"
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        interval: 15s
+        namespace: monitoring
+      rules:
+        enabled: false
+        spec: []
   repoServer:
     replicas: 4
+    # autoscaling:
+    #   enabled: false
+    #   minReplicas: 1
+    #   maxReplicas: 5
+    #   targetCPUUtilizationPercentage: 50
+    #   targetMemoryUtilizationPercentage: 50
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        interval: 15s
+        namespace: monitoring
     env:
       - name: "ARGOCD_EXEC_TIMEOUT"
         value: "5m"
   server:
+    replicas: 1
+    # autoscaling:
+    #   enabled: false
+    #   minReplicas: 1
+    #   maxReplicas: 5
+    #   targetCPUUtilizationPercentage: 50
+    #   targetMemoryUtilizationPercentage: 50
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        interval: 15s
+        namespace: monitoring
     extraArgs:
     - --insecure
     ingress:
@@ -49,7 +97,6 @@ argo-cd:
         statusbadge.enabled: 'true'
         users.anonymous.enabled: 'true'
         url: https://argocd.apps.blah.cloud
-        application.instanceLabelKey: argocd.argoproj.io/instance
         dex.config: |
           logger:
             level: "debug"
