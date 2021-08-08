@@ -44,6 +44,7 @@ install-prereqs:
 	kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > ~/Desktop/ArgoCD\ Secrets/sealed-secrets-master.key
 	kubectl create ns argocd || true
 	kubectl create ns minio || true
+	kubectl create ns monitoring || true
 	kubectl apply -f manifests/argocd-notifications/templates/
 	kubectl apply -f manifests/argocd-workflows/templates/
 
