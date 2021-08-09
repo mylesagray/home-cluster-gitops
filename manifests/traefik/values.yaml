@@ -44,20 +44,3 @@ traefik:
     enforced: true
     permanentRedirect: true
     insecureSkipVerify: true
-  acme:
-    enabled: false
-    challengeType: "dns-01"
-    keyType: RSA4096
-    email: mg@mylesgray.com
-    onHostRule: true
-    staging: true
-    logging: true
-    delayBeforeCheck: 0
-    resolvers:
-    - abby.ns.cloudflare.com
-    - sid.ns.cloudflare.com
-    persistence:
-      storageClass: external-nfs
-    dnsProvider:
-      name: cloudflare
-      existingSecretName: traefik-dnsprovider-config
