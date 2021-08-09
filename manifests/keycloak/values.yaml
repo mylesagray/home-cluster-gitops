@@ -8,10 +8,16 @@ keycloak:
     tag: latest
   ingress:
     enabled: true
-    hostname: keycloak.apps.blah.cloud
+    hostname: sso.apps.blah.cloud
+    certManager: true
+    ingressClassName: "traefik"
+    annotations:
+      kubernetes.io/ingress.class: traefik
+      cert-manager.io/cluster-issuer: letsencrypt-staging
+    tls: true
   extraEnvVars:
    - name: KEYCLOAK_FRONTEND_URL
-     value: https://keycloak.apps.blah.cloud/auth
+     value: https://sso.apps.blah.cloud/auth
   postgresql:
     image:
       repository: postgres

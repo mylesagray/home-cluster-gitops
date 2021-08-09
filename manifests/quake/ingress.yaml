@@ -3,9 +3,11 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
+    kubernetes.io/ingress.class: traefik
   name: quake
   namespace: quake
 spec:
+  ingressClassName: traefik
   rules:
   - host: quake.apps.blah.cloud
     http:

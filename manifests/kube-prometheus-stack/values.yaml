@@ -4,6 +4,13 @@ kube-prometheus-stack:
       enabled: true
       hosts:
       - grafana.apps.blah.cloud
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+      tls:
+      - secretName: grafana-cert
+        hosts:
+          - grafana.apps.blah.cloud
     persistence:
       type: pvc
       enabled: true
@@ -36,11 +43,27 @@ kube-prometheus-stack:
       hosts:
       - prometheus.apps.blah.cloud
       pathType: Prefix
+      ingressClassName: traefik
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+      tls:
+      - secretName: prometheus-cert
+        hosts:
+          - prometheus.apps.blah.cloud
     thanosIngress:
       enabled: true
       hosts:
       - thanos.apps.blah.cloud
       pathType: Prefix
+      ingressClassName: traefik
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+      tls:
+      - secretName: thanos-cert
+        hosts:
+          - thanos.apps.blah.cloud
     prometheusSpec:
       secrets: ['kube-etcd-client-certs']
       storageSpec:
@@ -84,3 +107,11 @@ kube-prometheus-stack:
       hosts:
       - alertmanager.apps.blah.cloud
       pathType: Prefix
+      ingressClassName: traefik
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+      tls:
+      - secretName: alertmanager-cert
+        hosts:
+          - alertmanager.apps.blah.cloud

@@ -5,6 +5,13 @@ kibana:
       - host: kibana.apps.blah.cloud
         paths:
         - path: /
+    annotations:
+      kubernetes.io/ingress.class: traefik
+      cert-manager.io/cluster-issuer: letsencrypt-staging
+    tls:
+    - secretName: kibana-cert
+      hosts:
+        - kibana.apps.blah.cloud
   # resources:
   #   requests:
   #     cpu: null
