@@ -110,7 +110,10 @@ make cleanup
   * Use IngressClass for Traefik rather than making it a default IngressClass
     * Investigate reloading Traefik when Cert-Manager changes a cert
       * <https://github.com/mmatur/traefik-cert-manager>
+      * <https://www.padok.fr/en/blog/traefik-kubernetes-certmanager>
 * Move to kube-vip from metallb
+  * For control plane: <https://kube-vip.io/install_static/>
+  * For svc type LB: <https://kube-vip.io/usage/on-prem/#Flow>
 * Add carlosedp Cluster Dashboard to Grafana
 * Add OIDC provider
   * Pinniped? <https://pinniped.dev>
