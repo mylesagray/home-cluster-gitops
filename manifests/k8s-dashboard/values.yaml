@@ -22,10 +22,10 @@ kubernetes-dashboard:
   settings: 
     clusterName: "rak8s"
     ## Max number of items that can be displayed on each list page
-    # itemsPerPage: 10
+    itemsPerPage: 10
     ## Number of seconds between every auto-refresh of logs
-    # logsAutoRefreshTimeInterval: 5
+    logsAutoRefreshTimeInterval: 5
     ## Number of seconds between every auto-refresh of every resource. Set 0 to disable
-    # resourceAutoRefreshTimeInterval: 5
+    resourceAutoRefreshTimeInterval: 5
     ## Hide all access denied warnings in the notification panel
-    # disableAccessDeniedNotifications: false
+    disableAccessDeniedNotifications: false
