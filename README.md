@@ -102,25 +102,32 @@ make cleanup
 
 ### Apps
 
-* Build ARM versions of containers I depend on
-  * Do it scalably and open upstream PRs
+* Move from traefik to traefik + cert-manager for ingress and TLS
+  * Traefik ~HA mode?
+    * <https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>
+    * <https://github.com/MySocialApp/kubernetes-helm-chart-traefik>
+  * Use cert-manager for TLS with DNS-01 challenges
+  * Use IngressClass for Traefik rather than making it a default IngressClass
+    * Investigate reloading Traefik when Cert-Manager changes a cert
+      * <https://github.com/mmatur/traefik-cert-manager>
+* Move to kube-vip from metallb
+* Add carlosedp Cluster Dashboard to Grafana
+* Add OIDC provider
+  * Pinniped? <https://pinniped.dev>
+* Add Renovate self-hosted
 * Add Argo Events
 * Add Argo Rollouts
 * Investigate Argo Operator
-* Add carlosedp Cluster Dashboard to Grafana
-* Add Renovate self-hosted
-* Add OIDC provider
-  * Pinniped? <https://pinniped.dev>
-* Move to kube-vip from metallb
 * ARM Builds of complex tools
   * Add Istio (needs ARM builds - <https://github.com/istio/istio/issues/21094>)
   * Add Tekton (needs ARM builds - <https://github.com/tektoncd/pipeline/issues/856>)
   * Add KNative (needs ARM builds - <https://github.com/knative/serving/issues/8320>)
   * All above rely on ko builds for ARM: <https://github.com/google/ko/pull/211>
-* Move from traefik to nginx + cert-manager for ingress and TLS
-  * Traefik HA mode?
-    * <https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>
-    * <https://github.com/MySocialApp/kubernetes-helm-chart-traefik>
+
+#### Ongoing
+
+* Build ARM versions of containers I depend on
+  * Do it scalably and open upstream PRs
 
 ### Organisational
 
