@@ -6,3 +6,6 @@ cert-manager:
     servicemonitor:
       enabled: true
       interval: 30s
+  extraArgs:
+  - --dns01-recursive-nameservers-only
+  - --dns01-recursive-nameservers=abby.ns.cloudflare.com:53,sid.ns.cloudflare.com:53
