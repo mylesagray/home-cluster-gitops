@@ -4,6 +4,7 @@ metadata:
   name: cheeses
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-staging
     traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
@@ -22,3 +23,7 @@ spec:
         backend:
           serviceName: wensleydale
           servicePort: http
+  tls:
+  - secretName: cheese-path-cert
+    hosts:
+    - cheese.apps.blah.cloud

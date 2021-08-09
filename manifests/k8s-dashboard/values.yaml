@@ -4,9 +4,14 @@ kubernetes-dashboard:
   ingress:
     enabled: true
     annotations:
-      kubernetes.io/ingress.class: traefik 
+      kubernetes.io/ingress.class: traefik
+      cert-manager.io/cluster-issuer: letsencrypt-staging
     hosts: 
     - k8s.apps.blah.cloud
+    tls:
+    - secretName: k8s-dashboard-cert
+      hosts:
+      - k8s.apps.blah.cloud
   metrics-server:
     enabled: true
     image:

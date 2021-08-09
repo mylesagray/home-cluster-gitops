@@ -4,6 +4,7 @@ metadata:
   name: cheese
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
   - host: stilton.cheese.apps.blah.cloud
@@ -27,3 +28,9 @@ spec:
         backend:
           serviceName: wensleydale
           servicePort: http
+  tls:
+  - secretName: cheese-host-cert
+    hosts:
+    - stilton.cheese.apps.blah.cloud
+    - cheddar.cheese.apps.blah.cloud
+    - wensleydale.cheese.apps.blah.cloud

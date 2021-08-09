@@ -27,7 +27,7 @@ traefik:
     permanentRedirect: true
     insecureSkipVerify: true
   acme:
-    enabled: true
+    enabled: false
     challengeType: "dns-01"
     keyType: RSA4096
     email: mg@mylesgray.com
