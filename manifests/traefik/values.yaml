@@ -1,4 +1,8 @@
 traefik:
+  replicas: 4
+  podDisruptionBudget:
+    maxUnavailable: 2
+    minAvailable: 2
   rbac:
     enabled: true
   kubernetes:
