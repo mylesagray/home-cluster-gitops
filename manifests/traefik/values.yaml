@@ -2,6 +2,10 @@ traefik:
   replicas: 4
   podDisruptionBudget:
     minAvailable: 2
+  deploymentStrategy:
+    rollingUpdate:
+      maxUnavailable: 2
+    type: RollingUpdate
   rbac:
     enabled: true
   kubernetes:
