@@ -2,6 +2,18 @@ traefik:
   replicas: 4
   podDisruptionBudget:
     minAvailable: 2
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - traefik
+          topologyKey: kubernetes.io/hostname
+        weight: 100
   rbac:
     enabled: true
   kubernetes:
