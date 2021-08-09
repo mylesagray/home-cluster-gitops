@@ -27,6 +27,7 @@ argo-workflows:
     extraArgs:
       - --auth-mode=sso
       - --insecure-skip-verify
+      - --insecure-skip-tls-verify
     sso:
       issuer: https://argocd.apps.blah.cloud/api/dex
       clientId:
