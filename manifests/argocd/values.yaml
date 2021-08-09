@@ -109,6 +109,7 @@ argo-cd:
         https: false
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-staging
+          kubernetes.io/ingress.class: traefik
         ingressClassName: "traefik"
         tls:
         - secretName: argocd-https-cert
@@ -121,6 +122,7 @@ argo-cd:
         https: false
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-staging
+          kubernetes.io/ingress.class: traefik
         ingressClassName: "traefik"
         tls:
         - secretName: argocd-grpc-cert
