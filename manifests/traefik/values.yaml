@@ -13,6 +13,14 @@ traefik:
   dashboard:
     enabled: true
     domain: "traefik.apps.blah.cloud"
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+        kubernetes.io/ingress.class: traefik
+      tls:
+        - hosts:
+          - traefik.apps.blah.cloud
+          secretName: traefik-cert
   ssl:
     enabled: true
     enforced: true
