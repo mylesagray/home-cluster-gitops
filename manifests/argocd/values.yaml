@@ -107,11 +107,25 @@ argo-cd:
         hosts:
         - argocd.apps.blah.cloud
         https: false
+        annotations:
+        - cert-manager.io/cluster-issuer: letsencrypt-staging
+        ingressClassName: "traefik"
+        tls:
+        - secretName: argocd-https-cert
+          hosts:
+            - argocd.apps.blah.cloud
     ingressGrpc:
         enabled: true
         hosts:
         - argocd.apps.blah.cloud
         https: false
+        annotations:
+        - cert-manager.io/cluster-issuer: letsencrypt-staging
+        ingressClassName: "traefik"
+        tls:
+        - secretName: argocd-grpc-cert
+          hosts:
+            - argocd.apps.blah.cloud
     config:
         admin.enabled: 'true'
         statusbadge.enabled: 'true'
