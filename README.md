@@ -39,7 +39,7 @@ helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets 
 
 ```sh
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/docker-creds.yaml > manifests/registry-creds/docker-creds-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-secret.yaml > manifests/argocd/templates/argocd-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-secret-rak8s.yaml > manifests/argocd/templates/argocd-sealed-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-github-secret.yaml > manifests/argocd/templates/argocd-github-sealed-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argocd-rak8s-secret.yaml > manifests/argocd/templates/argocd-rak8s-sealed-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/traefik-dnsprovider-config.yaml > manifests/traefik/templates/traefik-dnsprovider-config-sealed.yaml
