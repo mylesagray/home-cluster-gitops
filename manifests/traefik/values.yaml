@@ -2,6 +2,7 @@ traefik:
   rbac:
     enabled: true
   kubernetes:
+    ingressClass: traefik
     ingressEndpoint:
       useDefaultPublishedService: true
   metrics:
