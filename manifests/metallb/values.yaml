@@ -1,14 +1,28 @@
 metallb:
   rbac:
     create: true
+  prometheusRule:
+    enabled: true
   controller:
     image:
       repository: metallb/controller
       tag: v0.10.2
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
+    prometheus:
+      serviceMonitor:
+        enabled: true
   speaker:
     image:
       repository: metallb/speaker
       tag: v0.10.2
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
+    prometheus:
+      serviceMonitor:
+        enabled: true
   configInline:
     address-pools:
     - name: k8s-ip-space
