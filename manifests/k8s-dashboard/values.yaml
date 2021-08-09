@@ -19,8 +19,6 @@ kubernetes-dashboard:
     args:
       - --kubelet-insecure-tls
       - --kubelet-preferred-address-types=InternalIP
-  image:
-    tag: v2.1.0
   settings: 
     clusterName: "rak8s"
     ## Max number of items that can be displayed on each list page
