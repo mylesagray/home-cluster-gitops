@@ -4,12 +4,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
     kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/protocol: https
   name: minio-operator-tenant
   namespace: minio
 spec:
   rules:
     - host: minio-tenant.apps.blah.cloud
-      http:
+      https:
         paths:
           - backend:
               serviceName: minio-hl
