@@ -102,12 +102,12 @@ make cleanup
 
 ### Apps
 
-* Move from traefik to traefik + cert-manager for ingress and TLS
-  * Traefik ~HA mode?
-    * <https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>
-    * <https://github.com/MySocialApp/kubernetes-helm-chart-traefik>
-  * Use cert-manager for TLS with DNS-01 challenges
-  * Use IngressClass for Traefik rather than making it a default IngressClass
+* ~~Move from traefik to traefik + cert-manager for ingress and TLS~~
+  * ~~Traefik ~HA mode?~~
+    * ~~<https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>~~
+    * ~~<https://github.com/MySocialApp/kubernetes-helm-chart-traefik>~~
+  * ~~Use cert-manager for TLS with DNS-01 challenges~~
+  * ~~Use IngressClass for Traefik rather than making it a default IngressClass~~
     * Investigate reloading Traefik when Cert-Manager changes a cert
       * <https://github.com/mmatur/traefik-cert-manager>
       * <https://www.padok.fr/en/blog/traefik-kubernetes-certmanager>
@@ -136,7 +136,7 @@ make cleanup
 
 * Add cert-manager mixin <https://monitoring.mixins.dev/cert-manager/>
   * <https://gitlab.com/uneeq-oss/cert-manager-mixin>
-* Add carlosedp Cluster Dashboard to Grafana
+* ~~Add carlosedp Cluster Dashboard to Grafana~~
 
 ### Organisational
 
