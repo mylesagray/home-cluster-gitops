@@ -2,8 +2,7 @@ minio-operator:
   console:
     ingress:
       enabled: true
-      hosts:
-      - minio-console.apps.blah.cloud
+      host: minio-console.apps.blah.cloud
       annotations:
         kubernetes.io/ingress.class: traefik
         cert-manager.io/cluster-issuer: letsencrypt-staging
