@@ -37,7 +37,7 @@ data:
                     "rgba(237, 129, 40, 0.89)",
                     "rgba(245, 54, 54, 0.9)"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "editable": true,
                 "error": false,
                 "fieldConfig": {
@@ -134,7 +134,7 @@ data:
                     "rgb(210, 1, 1)",
                     "#890f02"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -228,7 +228,7 @@ data:
                     "rgba(237, 129, 40, 0.89)",
                     "rgba(245, 54, 54, 0.9)"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "decimals": 0,
                 "editable": true,
                 "error": false,
@@ -321,7 +321,7 @@ data:
                 "columns": [
 
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -490,7 +490,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -654,7 +654,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -772,7 +772,7 @@ data:
                 "columns": [
 
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -913,7 +913,7 @@ data:
                     "rgba(237, 129, 40, 0.89)",
                     "rgba(245, 54, 54, 0.9)"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "decimals": null,
                 "editable": true,
                 "error": false,
@@ -1047,7 +1047,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1222,7 +1222,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1358,7 +1358,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "decimals": 0,
                 "editable": true,
                 "error": false,
@@ -1491,7 +1491,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "decimals": 2,
                 "editable": true,
                 "error": false,
@@ -1630,7 +1630,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "editable": true,
                 "error": false,
                 "fieldConfig": {
@@ -1769,7 +1769,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "editable": true,
                 "error": false,
                 "fieldConfig": {
@@ -1907,7 +1907,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "decimals": 2,
                 "editable": true,
                 "error": false,

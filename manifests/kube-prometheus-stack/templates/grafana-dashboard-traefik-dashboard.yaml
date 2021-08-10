@@ -80,7 +80,7 @@ data:
                     "rgba(237, 129, 40, 0.89)",
                     "#299c46"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -172,7 +172,7 @@ data:
                     "rgba(237, 129, 40, 0.89)",
                     "#d44a3a"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -264,7 +264,7 @@ data:
                     "rgba(237, 129, 40, 0.89)",
                     "#d44a3a"
                 ],
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -355,7 +355,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -473,7 +473,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -605,7 +605,7 @@ data:
                 "bars": true,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -721,7 +721,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -839,7 +839,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -971,7 +971,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1089,7 +1089,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1221,7 +1221,7 @@ data:
                 "bars": true,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1339,7 +1339,7 @@ data:
                 "bars": true,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1455,7 +1455,7 @@ data:
                 "bars": true,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1573,7 +1573,7 @@ data:
                 "bars": true,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1706,7 +1706,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1836,7 +1836,7 @@ data:
                 "bars": false,
                 "dashLength": 10,
                 "dashes": false,
-                "datasource": "prometheus",
+                "datasource": "",
                 "fieldConfig": {
                     "defaults": {
                         "custom": {
@@ -1973,7 +1973,7 @@ data:
                         "text": "kube-system",
                         "value": "kube-system"
                     },
-                    "datasource": "prometheus",
+                    "datasource": "",
                     "definition": "",
                     "hide": 0,
                     "includeAll": false,
