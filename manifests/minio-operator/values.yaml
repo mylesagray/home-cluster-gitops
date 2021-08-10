@@ -1,0 +1,14 @@
+minio-operator:
+  console:
+    ingress:
+      enabled: true
+      hosts:
+      - minio-console.apps.blah.cloud
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+      tls:
+      - secretName: minio-console-cert
+        hosts:
+          - minio-console.apps.blah.cloud
+  tenants: {}

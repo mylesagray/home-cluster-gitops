@@ -49,6 +49,7 @@ kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/keycloak-postgres-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-minio.yaml  > manifests/argocd-workflows/templates/argo-workflows-minio-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/argo-workflows-minio-minio.yaml  > manifests/minio/templates/argo-workflows-minio-minio-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/minio-tenant-secret.yaml  > manifests/minio-operator/templates/minio-tenant-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD\ Secrets/cloudflare-api-token.yaml  > manifests/cert-manager/templates/cloudflare-api-token-sealed.yaml
 ```
