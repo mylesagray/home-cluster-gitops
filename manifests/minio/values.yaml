@@ -25,7 +25,7 @@ minio:
   metrics:
     serviceMonitor:
       enabled: true
-      namespace: monitoring
+      namespace: minio
       interval: 30s
       scrapeTimeout: 10s
   helmKubectlJqImage:
