@@ -28,3 +28,6 @@ minio:
       namespace: monitoring
       interval: 30s
       scrapeTimeout: 10s
+  helmKubectlJqImage:
+    repository: mylesagray/helm-kubectl-jq
+    tag: v3.6.3
