@@ -546,7 +546,7 @@ data:
                         "expr": "node_memory_MemTotal_bytes - (node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes)",
                         "format": "time_series",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }} instance {{ "}}" }}",
+                        "legendFormat": "{{ instance }}",
                         "refId": "A"
                     },
                     {
@@ -710,7 +710,7 @@ data:
                         "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100)",
                         "format": "time_series",
                         "intervalFactor": 3,
-                        "legendFormat": "{{ "{{" }}instance{{ "}}" }}",
+                        "legendFormat": "{{instance}}",
                         "refId": "A"
                     }
                 ],
@@ -1278,7 +1278,7 @@ data:
                         "expr": "rpi_cpu_temperature_celsius",
                         "format": "time_series",
                         "intervalFactor": 5,
-                        "legendFormat": "{{ "{{" }}instance{{ "}}" }}",
+                        "legendFormat": "{{instance}}",
                         "refId": "A"
                     }
                 ],
@@ -1430,7 +1430,7 @@ data:
                         "instant": false,
                         "interval": "",
                         "intervalFactor": 1,
-                        "legendFormat": "{{ "{{" }} pod{{ "}}" }}",
+                        "legendFormat": "{{ pod}}",
                         "metric": "container_cpu",
                         "refId": "A",
                         "step": 10
@@ -1561,7 +1561,7 @@ data:
                         "hide": true,
                         "interval": "10s",
                         "intervalFactor": 1,
-                        "legendFormat": "{{ "{{" }} pod {{ "}}" }}",
+                        "legendFormat": "{{ pod }}",
                         "metric": "container_memory_usage:sort_desc",
                         "refId": "A",
                         "step": 10
@@ -1571,7 +1571,7 @@ data:
                         "format": "time_series",
                         "interval": "",
                         "intervalFactor": 1,
-                        "legendFormat": "{{ "{{" }} pod {{ "}}" }}",
+                        "legendFormat": "{{ pod }}",
                         "refId": "B"
                     }
                 ],
@@ -1699,7 +1699,7 @@ data:
                         "format": "time_series",
                         "interval": "",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }} pod_name {{ "}}" }}",
+                        "legendFormat": "{{ pod_name }}",
                         "refId": "A",
                         "step": 240
                     },
@@ -1838,7 +1838,7 @@ data:
                         "format": "time_series",
                         "interval": "",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }}pod_name{{ "}}" }}",
+                        "legendFormat": "{{pod_name}}",
                         "refId": "A",
                         "step": 240
                     },
@@ -1847,7 +1847,7 @@ data:
                         "format": "time_series",
                         "hide": true,
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }}pod_name{{ "}}" }}",
+                        "legendFormat": "{{pod_name}}",
                         "refId": "B",
                         "step": 10
                     }

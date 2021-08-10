@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   labels:
-    grafana_dashboard: "1"
+    grafana_dashboard: 1
   name: grafana-dashboard-traefik-dashboard
 data:
   traefik-dashboard.json: |-
@@ -531,7 +531,7 @@ data:
                         "expr": "histogram_quantile(0.$percentiles, rate(traefik_entrypoint_request_duration_seconds_bucket{namespace=\"$namespace\",code=\"200\",method=\"GET\"}[5m]))",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{ "{{" }} instance {{ "}}" }}",
+                        "legendFormat": "{{ instance }}",
                         "refId": "A"
                     }
                 ],
@@ -781,7 +781,7 @@ data:
                         "expr": "sum(traefik_entrypoint_open_connections{namespace=\"$namespace\"}) by (method)",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{ "{{" }} method {{ "}}" }}",
+                        "legendFormat": "{{ method }}",
                         "refId": "A"
                     }
                 ],
@@ -1031,7 +1031,7 @@ data:
                         "expr": "sum(traefik_backend_open_connections{namespace=\"$namespace\"}) by (method)",
                         "format": "time_series",
                         "intervalFactor": 1,
-                        "legendFormat": "{{ "{{" }} method {{ "}}" }}",
+                        "legendFormat": "{{ method }}",
                         "refId": "A"
                     }
                 ],
@@ -1281,7 +1281,7 @@ data:
                         "expr": "sum(rate(traefik_backend_requests_total{namespace=\"$namespace\",code=~\"2..\"}[5m])) by (method, code)",
                         "format": "time_series",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }}method{{ "}}" }} : {{ "{{" }}code{{ "}}" }}",
+                        "legendFormat": "{{method}} : {{code}}",
                         "refId": "A"
                     }
                 ],
@@ -1397,7 +1397,7 @@ data:
                         "expr": "sum(rate(traefik_backend_requests_total{namespace=\"$namespace\",code=~\"5..\"}[5m])) by (method, code)",
                         "format": "time_series",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }}method{{ "}}" }} : {{ "{{" }}code{{ "}}" }}",
+                        "legendFormat": "{{method}} : {{code}}",
                         "refId": "A"
                     }
                 ],
@@ -1515,7 +1515,7 @@ data:
                         "expr": "sum(rate(traefik_backend_requests_total{namespace=\"$namespace\"}[1m])) by (backend)",
                         "format": "time_series",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }} backend {{ "}}" }}",
+                        "legendFormat": "{{ backend }}",
                         "refId": "A"
                     }
                 ],
@@ -1632,7 +1632,7 @@ data:
                         "expr": "sum(rate(traefik_backend_requests_total{namespace=\"$namespace\",code!~\"2..|5..\"}[5m])) by (method, code)",
                         "format": "time_series",
                         "intervalFactor": 2,
-                        "legendFormat": "{{ "{{" }} method {{ "}}" }} : {{ "{{" }}code{{ "}}" }}",
+                        "legendFormat": "{{ method }} : {{code}}",
                         "refId": "A"
                     }
                 ],

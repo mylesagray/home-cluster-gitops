@@ -1,0 +1,7 @@
+spec:
+  clusterIP: None
+  ports:
+  - name: http-metrics
+    port: 10257
+    protocol: TCP
+    targetPort: 10257
