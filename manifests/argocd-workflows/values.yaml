@@ -45,3 +45,6 @@ argo-workflows:
         name: argo-workflows-minio
       secretKeySecret:
         name: argo-workflows-minio
+      insecure: true
+      bucket: argo-workflows
+      endpoint: s3.apps.blah.cloud
