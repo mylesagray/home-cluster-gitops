@@ -10,7 +10,7 @@ metadata:
 spec:
   rules:
     - host: minio-tenant.apps.blah.cloud
-      https:
+      http:
         paths:
           - backend:
               serviceName: minio-hl
