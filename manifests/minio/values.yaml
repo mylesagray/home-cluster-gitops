@@ -22,3 +22,6 @@ minio:
       memory: 2Gi
   securityContext:
     enabled: false
+  metrics:
+    serviceMonitor:
+      enabled: true
