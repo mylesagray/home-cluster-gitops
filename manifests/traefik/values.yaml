@@ -26,6 +26,8 @@ traefik:
       enabled: true
       serviceMonitor:
         enabled: true
+        namespace: monitoring
+        interval: 30s
   dashboard:
     enabled: true
     domain: "traefik.apps.blah.cloud"
