@@ -72,7 +72,7 @@ spec:
               - key: app
                 operator: In
                 values:
-                - store
+                - minio
             topologyKey: "kubernetes.io/hostname"
 
       ## Configure resource requests and limits for MinIO containers
