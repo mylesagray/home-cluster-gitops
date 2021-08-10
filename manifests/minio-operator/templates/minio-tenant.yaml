@@ -29,7 +29,6 @@ spec:
       name: pool-0
       ## volumesPerServer specifies the number of volumes attached per MinIO Tenant Pod / Server.
       volumesPerServer: 4
-
       ## This VolumeClaimTemplate is used across all the volumes provisioned for MinIO Tenant in this
       ## Pool.
       volumeClaimTemplate:
@@ -79,7 +78,7 @@ spec:
       ## Configure resource requests and limits for MinIO containers
       resources:
         requests:
-          memory: 2Gi
+          memory: 512Mi
       #   limits:
       #     cpu: 500m
       #      memory: 16Gi
