@@ -31,7 +31,8 @@ keycloak:
     image:
       repository: adorsys/keycloak-config-cli
       tag: v4.2.1-rc0-15.0.1
-    existingConfigmap: "keycloak-config"
-    extraEnvVars:
-      - name: KEYCLOAK_URL
-        value: 'http://keycloak-headless/auth'
+    configuration:
+      myrealm.yaml: |
+        realm: myrealm
+        enabled: true
+        displayName: My Realm
