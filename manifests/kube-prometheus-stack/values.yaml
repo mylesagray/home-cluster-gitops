@@ -31,6 +31,7 @@ kube-prometheus-stack:
         token_url: "https://sso.apps.blah.cloud/auth/realms/development/protocol/openid-connect/token"
         api_url: "https://sso.apps.blah.cloud/auth/realms/development/protocol/openid-connect/userinfo"
         allow_sign_up: true
+        tls_skip_verify_insecure: true
         email_attribute_name: email
         scopes: "openid profile email"
   prometheus:
