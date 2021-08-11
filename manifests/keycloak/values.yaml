@@ -15,8 +15,6 @@ keycloak:
       kubernetes.io/ingress.class: traefik
       cert-manager.io/cluster-issuer: letsencrypt-staging
     tls: true
-  containerPorts:
-    http: 80
   extraEnvVars:
    - name: KEYCLOAK_FRONTEND_URL
      value: https://sso.apps.blah.cloud/auth
@@ -34,3 +32,6 @@ keycloak:
       repository: adorsys/keycloak-config-cli
       tag: v4.2.1-rc0-15.0.1
     existingConfigmap: "keycloak-config"
+    extraEnvVars:
+      - name: KEYCLOAK_URL
+        value: 'http://keycloak-headless/auth'
