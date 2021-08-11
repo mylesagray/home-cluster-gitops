@@ -4,7 +4,7 @@ metadata:
   name: keycloak-config
   namespace: keycloak
 data:
-  config.yaml: |
+  config.json: |
     {
       "users": [
           {
