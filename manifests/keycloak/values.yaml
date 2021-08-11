@@ -1,4 +1,9 @@
 keycloak:
+  auth:
+    adminUser: testing
+    adminPassword: testing
+    managementUser: testing
+    managementPassword: testing
   proxyAddressForwarding: true
   image:
     repository: mylesagray/keycloak-arm
@@ -21,6 +26,7 @@ keycloak:
       tag: 13.3
     postgresqlDataDir: /data/pgdata
     persistence:
+      enabled: false
       mountPath: /data/
   keycloakConfigCli:
     enabled: true
