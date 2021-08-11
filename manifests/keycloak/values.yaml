@@ -1,6 +1,6 @@
 keycloak:
   auth:
-    adminUser: testing
+    adminUser: user
     adminPassword: testing
     managementUser: testing
     managementPassword: testing
