@@ -6,8 +6,8 @@ external-dns:
   metrics:
     enabled: true
   image:
-    repository: raspbernetes/external-dns
-    tag: latest
+    repository: k8s.gcr.io/external-dns/external-dns
+    tag: v0.9.0
   provider: rfc2136
   rfc2136:
     host: "192.168.1.20"

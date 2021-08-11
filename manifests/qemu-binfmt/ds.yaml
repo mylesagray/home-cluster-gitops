@@ -25,7 +25,7 @@ spec:
           effect: NoSchedule
       initContainers:
         - name: binfmt
-          image: tonistiigi/binfmt:qemu-v5.0.1
+          image: tonistiigi/binfmt
           # command: []
           args: ["--install", "all"]
           # Run the container with the privileged flag

@@ -149,3 +149,4 @@ make cleanup
 
 * Remove all internal un/passwords and keys and turn into sealed secrets
 * Make ArgoCD GitHub webhook authenticated
+* [Build Keycloak-config-cli for arm64](https://github.com/adorsys/keycloak-config-cli/issues/503)

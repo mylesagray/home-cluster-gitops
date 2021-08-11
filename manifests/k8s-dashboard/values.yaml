@@ -12,10 +12,12 @@ kubernetes-dashboard:
     - secretName: k8s-dashboard-cert
       hosts:
       - k8s.apps.blah.cloud
+  metricsScraper:
+    enabled: true
   metrics-server:
     enabled: true
     image:
-      repository: k8s.gcr.io/metrics-server-arm
+      repository: k8s.gcr.io/metrics-server-arm64
     args:
       - --kubelet-insecure-tls
       - --kubelet-preferred-address-types=InternalIP

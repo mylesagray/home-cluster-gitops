@@ -1,13 +1,7 @@
 nfs-client-provisioner:
-  rbac:
-    create: true
   nfs:
     server: nas01.belfast.blah.cloud
     path: /volume1/mounts/k8s
-  image:
-    repository: rkevin/nfs-subdir-external-provisioner
-    tag: fix-k8s-1.20-arm
   storageClass:
     name: external-nfs
     defaultClass: true
-    archiveOnDelete: false
