@@ -1,5 +1,6 @@
 keycloak:
   auth:
+    createAdminUser: true
     adminUser: user
     adminPassword: testing
     managementUser: testing
@@ -27,13 +28,13 @@ keycloak:
       postgresqlDataDir: /data/pgdata
       persistence:
         mountPath: /data/
-  keycloakConfigCli:
-    enabled: true
-    image:
-      repository: adorsys/keycloak-config-cli
-      tag: v4.2.1-rc0-15.0.1
-    configuration:
-      myrealm.yaml: |
-        realm: myrealm
-        enabled: true
-        displayName: My Realm
+  # keycloakConfigCli:
+  #   enabled: true
+  #   image:
+  #     repository: adorsys/keycloak-config-cli
+  #     tag: v4.2.1-rc0-15.0.1
+  #   configuration:
+  #     myrealm.yaml: |
+  #       realm: myrealm
+  #       enabled: true
+  #       displayName: My Realm
