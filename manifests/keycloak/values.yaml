@@ -24,10 +24,8 @@ keycloak:
     image:
       repository: postgres
       tag: 13.3
-    postgresqlDataDir: /data/pgdata
     persistence:
       enabled: false
-      mountPath: /data/
   keycloakConfigCli:
     enabled: true
     image:
