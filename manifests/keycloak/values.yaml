@@ -20,9 +20,25 @@ keycloak:
     - name: KEYCLOAK_USER
       value: user
     - name: KEYCLOAK_PASSWORD
-      value: testing
+      valueFrom:
+        secretKeyRef:
+          key: admin-password
+          name: keycloak
     - name: DB_VENDOR
       value: postgres
+    - name: DB_ADDR
+      value: keycloak-postgres
+    - name: DB_PORT
+      value: 5432
+    - name: DB_DATABASE
+      value: bitnami_keycloak
+    - name: DB_USER
+      value: bn_keycloak
+    - name: DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: database-password
+          name: keycloak
   postgresql:
       image:
         repository: postgres
