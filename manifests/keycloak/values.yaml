@@ -5,7 +5,7 @@ keycloak:
   proxyAddressForwarding: true
   image:
     repository: mylesagray/keycloak-arm
-    tag: latest
+    tag: 15.0.0
   ingress:
     enabled: true
     hostname: sso.apps.blah.cloud
