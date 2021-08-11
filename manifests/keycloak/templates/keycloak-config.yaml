@@ -4,20 +4,28 @@ metadata:
   name: keycloak-config
   namespace: keycloak
 data:
-  config.json: |
+  development.json: |
     {
-      "users": [
-          {
-              "username": "admin",
-              "email": "mg@mylesgray.com",
-              "enabled": true,
-              "credentials": [
-                  {
-                      "type": "password",
-                      "userLabel": "initial",
-                      "value": "start123"
-                  }
-              ]
-          }
-      ]
+      "enabled": true,
+      "realm": "development",
+      "displayName": "Development",
+      "clients": [
+        {
+          "clientId": "grafana.apps.blah.cloud",
+          "name": "client-to-be-deleted",
+          "description": "Client which has to be removed after first config changes",
+          "enabled": true,
+          "clientAuthenticatorType": "client-secret",
+          "secret": "my-special-client-secret",
+          "redirectUris": [
+            "*"
+          ],
+          "webOrigins": [
+            "*"
+          ]
+        }
+      ],
+      "attributes": {
+        "custom": "test-step00"
+      }
     }
