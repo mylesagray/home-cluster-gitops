@@ -26,7 +26,7 @@ kube-prometheus-stack:
         enabled: true
         name: "SSO"
         client_id: "grafana.apps.blah.cloud"
-        client_secret: "e44e4dcc-06a2-4d67-9e28-1f17a39c91b2"
+        client_secret: "0c346dd7-8ed8-4a3b-a9b8-e0e51804034d"
         auth_url: "https://sso.apps.blah.cloud/auth/realms/development/protocol/openid-connect/auth"
         token_url: "https://sso.apps.blah.cloud/auth/realms/development/protocol/openid-connect/token"
         api_url: "https://sso.apps.blah.cloud/auth/realms/development/protocol/openid-connect/userinfo"

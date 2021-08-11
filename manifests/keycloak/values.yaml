@@ -52,8 +52,4 @@ keycloak:
     image:
       repository: adorsys/keycloak-config-cli
       tag: v4.2.1-rc0-15.0.1
-    configuration:
-      myrealm.yaml: |
-        realm: myrealm
-        enabled: true
-        displayName: My Realm
+    existingConfigmap: "keycloak-config"
