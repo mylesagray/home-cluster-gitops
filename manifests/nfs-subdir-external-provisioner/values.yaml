@@ -1,4 +1,4 @@
-nfs-client-provisioner:
+nfs-subdir-external-provisioner:
   nfs:
     server: nas01.belfast.blah.cloud
     path: /volume1/mounts/k8s
