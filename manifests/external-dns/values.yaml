@@ -14,7 +14,7 @@ external-dns:
     host: "192.168.1.20"
     port: 53
     zone: "apps.blah.cloud"
-    tsigSecret: "h2R9u5rh5bNcO250bAHRWRRZ99asVgQOEKU+8kl4GEOAh5jIZSYhFKD8lxXtejzNnlteueiLulD4qsWvSXmtEQ=="
+    tsigSecret: "vKmN/JyNC3+QrFGh0XqdlBWrjKVClkCfig82mAR5OfRk6j0Q3Wq0YNLhqEBanAK+JOpWDEykU/WYk0nC3+W8zQ=="
     tsigSecretAlg: hmac-md5
     tsigKeyname: external-dns
     tsigAxfr: true
