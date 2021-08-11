@@ -9,23 +9,98 @@ data:
       "enabled": true,
       "realm": "development",
       "displayName": "Development",
+      "roles": {
+        "client": {
+          "grafana.apps.blah.cloud": [
+            {
+              "id": "grafana.apps.blah.cloud-client",
+              "name": "admin",
+              "composite": false,
+              "clientRole": true,
+              "attributes": {}
+            }
+          ]
+        }
+      },
       "clients": [
         {
+          "id": "grafana.apps.blah.cloud",
           "clientId": "grafana.apps.blah.cloud",
-          "name": "client-to-be-deleted",
-          "description": "Client which has to be removed after first config changes",
+          "rootUrl": "${authBaseUrl}",
+          "adminUrl": "",
+          "baseUrl": "/login/generic_oauth",
+          "surrogateAuthRequired": false,
           "enabled": true,
+          "alwaysDisplayInConsole": false,
           "clientAuthenticatorType": "client-secret",
-          "secret": "my-special-client-secret",
+          "secret": "0c346dd7-8ed8-4a3b-a9b8-e0e51804034d",
           "redirectUris": [
-            "*"
+            "https://grafana.apps.blah.cloud/login/generic_oauth"
           ],
           "webOrigins": [
-            "*"
+            ""
+          ],
+          "notBefore": 0,
+          "bearerOnly": false,
+          "consentRequired": false,
+          "standardFlowEnabled": true,
+          "implicitFlowEnabled": false,
+          "directAccessGrantsEnabled": true,
+          "serviceAccountsEnabled": false,
+          "publicClient": false,
+          "frontchannelLogout": false,
+          "protocol": "openid-connect",
+          "attributes": {},
+          "fullScopeAllowed": false,
+          "protocolMappers": [
+            {
+              "name": "Roles",
+              "protocol": "openid-connect",
+              "protocolMapper": "oidc-usermodel-client-role-mapper",
+              "consentRequired": false,
+              "config": {
+                "multivalued": "true",
+                "userinfo.token.claim": "true",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "roles",
+                "jsonType.label": "String",
+                "usermodel.clientRoleMapping.clientId": "grafana.apps.blah.cloud"
+              }
+            }
+          ],
+          "defaultClientScopes": [
+            "web-origins",
+            "profile",
+            "roles",
+            "email"
+          ],
+          "optionalClientScopes": [
+            "address",
+            "phone",
+            "offline_access",
+            "microprofile-jwt"
           ]
         }
       ],
-      "attributes": {
-        "custom": "test-step00"
-      }
+      "identityProviders": [
+        {
+          "alias": "github",
+          "providerId": "github",
+          "enabled": true,
+          "updateProfileFirstLoginMode": "on",
+          "trustEmail": false,
+          "storeToken": false,
+          "addReadTokenRoleOnCreate": false,
+          "authenticateByDefault": false,
+          "linkOnly": false,
+          "firstBrokerLoginFlowAlias": "first broker login",
+          "config": {
+            "syncMode": "IMPORT",
+            "clientSecret": "83eda68cd0806378129e4382148d088f48c9caff",
+            "clientId": "712a9196743291230094",
+            "useJwksUrl": "true"
+          }
+        }
+      ]
     }
