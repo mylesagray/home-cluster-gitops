@@ -14,9 +14,9 @@ external-dns:
     host: "192.168.1.20"
     port: 53
     zone: "apps.blah.cloud"
-    tsigSecret: "AHyWUWLZ0GxSydCHjjo6RNoyjHDQk1nbCTkvqMNBgUi3YYssNUNJdHerpF+Ff3lufwSVNOWjDqy8P/Evdwi0QA=="
+    secretName: external-dns-tsig-key
     tsigSecretAlg: hmac-sha512
-    tsigKeyname: other
+    tsigKeyname: external-dns-rak8s
     tsigAxfr: true
   txtOwnerId: rak8s
   logLevel: info
