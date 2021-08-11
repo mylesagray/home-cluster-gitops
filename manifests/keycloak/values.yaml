@@ -5,7 +5,7 @@ keycloak:
   proxyAddressForwarding: true
   image:
     repository: mylesagray/keycloak-arm
-    tag: 15.0.0
+    tag: 15.0.1
   ingress:
     enabled: true
     hostname: sso.apps.blah.cloud
@@ -26,3 +26,9 @@ keycloak:
     persistence:
       mountPath: /data/
     existingSecret: keycloak-postgresql
+  keycloakConfigCli:
+    enabled: true
+    image:
+      repository: adorsys/keycloak-config-cli
+      tag: v4.2.1-rc0-15.0.1
+    existingConfigmap: "keycloak-config"

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-config
+  namespace: keycloak
+data:
+  config.yaml: |
+    {
+      "users": [
+          {
+              "username": "admin",
+              "email": "mg@mylesgray.com",
+              "enabled": true,
+              "credentials": [
+                  {
+                      "type": "password",
+                      "userLabel": "initial",
+                      "value": "start123"
+                  }
+              ]
+          }
+      ]
+    }
