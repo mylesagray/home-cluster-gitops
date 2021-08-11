@@ -21,7 +21,12 @@ keycloak:
    - name: KEYCLOAK_FRONTEND_URL
      value: https://sso.apps.blah.cloud/auth
   postgresql:
-    enabled: false
+      image:
+        repository: postgres
+        tag: 13.3
+      postgresqlDataDir: /data/pgdata
+      persistence:
+        mountPath: /data/
   keycloakConfigCli:
     enabled: true
     image:
