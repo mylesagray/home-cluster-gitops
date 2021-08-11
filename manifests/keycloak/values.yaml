@@ -34,7 +34,7 @@ keycloak:
     configuration:
       users.yaml: |
         users:
-          username: admin
+          username: test
           email: mg@mylesgray.com
           enabled: true
           credentials:
