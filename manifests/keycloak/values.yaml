@@ -22,7 +22,6 @@ keycloak:
     postgresqlDataDir: /data/pgdata
     persistence:
       mountPath: /data/
-    existingSecret: keycloak-postgresql
   keycloakConfigCli:
     enabled: true
     image:
