@@ -32,6 +32,15 @@ keycloak:
       repository: adorsys/keycloak-config-cli
       tag: v4.2.1-rc0-15.0.1
     configuration:
+      users.yaml: |
+        users:
+          username: admin
+          email: mg@mylesgray.com
+          enabled: true
+          credentials:
+            type: password
+            userLabel: initial
+            value: start123
       myrealm.yaml: |
         realm: myrealm
         enabled: true
