@@ -27,7 +27,7 @@ keycloak:
     - name: DB_VENDOR
       value: postgres
     - name: DB_ADDR
-      value: keycloak-postgres
+      value: keycloak-postgresql
     - name: DB_PORT
       value: '5432'
     - name: DB_DATABASE
