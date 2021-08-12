@@ -1,11 +1,11 @@
 velero:
-  upgradeCRDs: false
+  upgradeCRDs: true
   configuration:
     provider: aws
     backupStorageLocation:
       bucket: velero
       config:
-        region: minio
+        region: eu-west-1
         s3ForcePathStyle: true
         s3Url: https://minio.belfast.blah.cloud.
     volumeSnapshotLocation:
@@ -41,6 +41,10 @@ velero:
       template:
         snapshotVolumes: false
         ttl: 24h
+  kubectl:
+    image:
+      repository: docker.io/rancher/kubectl
+      tag: v1.20.2
   initContainers:
   - name: velero-plugin-for-aws
     image: velero/velero-plugin-for-aws
