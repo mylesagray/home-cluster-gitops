@@ -43,8 +43,8 @@ argo-cd:
     enableStatefulSet: true
     replicas: 2
     args:
-      statusProcessors: "20"
-      operationProcessors: "10"
+      statusProcessors: "10"
+      operationProcessors: "5"
     env:
     - name: "ARGOCD_CONTROLLER_REPLICAS"
       value: "2"
