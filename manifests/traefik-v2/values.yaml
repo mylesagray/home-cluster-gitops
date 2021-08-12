@@ -4,9 +4,9 @@ traefik:
   podDisruptionBudget:
     enabled: true
     minAvailable: 2
-  ingressClass:
-    enabled: true
-    isDefaultClass: true
+  # ingressClass:
+  #   enabled: true
+  #   isDefaultClass: true
   pilot:
     enabled: true
     token: "00b958f6-2c73-473d-a765-58ea352bc094"
@@ -34,9 +34,3 @@ traefik:
   tolerations:
   - effect: NoSchedule
     key: node-role.kubernetes.io/master
-  rbac:
-    enabled: true
-  kubernetes:
-    ingressClass: traefik
-    ingressEndpoint:
-      useDefaultPublishedService: true
