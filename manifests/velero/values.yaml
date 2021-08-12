@@ -1,5 +1,5 @@
 velero:
-  upgradeCRDs: true
+  upgradeCRDs: false
   configuration:
     provider: aws
     backupStorageLocation:
@@ -41,10 +41,6 @@ velero:
       template:
         snapshotVolumes: false
         ttl: 24h
-  kubectl:
-    image:
-      repository: docker.io/rancher/kubectl
-      tag: v1.20.2
   initContainers:
   - name: velero-plugin-for-aws
     image: velero/velero-plugin-for-aws
