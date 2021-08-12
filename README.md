@@ -138,6 +138,7 @@ make cleanup
 
 * Add cert-manager mixin <https://monitoring.mixins.dev/cert-manager/>
   * <https://gitlab.com/uneeq-oss/cert-manager-mixin>
+  * Add grafana dashboards from <https://grafana.com/grafana/dashboards>
 * ~~Add carlosedp Cluster Dashboard to Grafana~~
 
 ### Organisational
@@ -150,5 +151,6 @@ make cleanup
 
 * Remove all internal un/passwords and keys and turn into sealed secrets
   * Remove as many static passwords as possible and rely on auto-generated secrets
+  * Keycloak tokens
+  * Grafana tokens
 * Make ArgoCD GitHub webhook authenticated
-* [Build Keycloak-config-cli for arm64](https://github.com/adorsys/keycloak-config-cli/issues/503)

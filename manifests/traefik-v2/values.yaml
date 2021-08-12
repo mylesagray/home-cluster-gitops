@@ -1,0 +1,42 @@
+traefik:
+  deployment:
+    replicas: 4
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 2
+  ingressClass:
+    enabled: true
+    isDefaultClass: true
+  pilot:
+    enabled: true
+    token: "00b958f6-2c73-473d-a765-58ea352bc094"
+    dashboard: true
+  ingressRoute:
+    dashboard:
+      enabled: true
+      annotations: 
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+        kubernetes.io/ingress.class: traefik
+  providers:
+    kubernetesIngress:
+      publishedService:
+        enabled: true
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - traefik
+        topologyKey: "kubernetes.io/hostname"
+  tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  rbac:
+    enabled: true
+  kubernetes:
+    ingressClass: traefik
+    ingressEndpoint:
+      useDefaultPublishedService: true

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik
+  name: traefik-v2
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "4"
@@ -12,13 +12,13 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: manifests/traefik
+    path: manifests/traefik-v2
     helm:
       valueFiles:
         - values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: ingress
+    namespace: traefik
   syncPolicy:
     automated:
       prune: true
