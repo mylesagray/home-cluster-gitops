@@ -1,29 +1,15 @@
 fluent-bit:
-  dnsConfig: {}
-    # nameservers:
-    #   - 1.2.3.4
-    # searches:
-    #   - ns1.svc.cluster-domain.example
-    #   - my.dns.search.suffix
-    # options:
-    #   - name: ndots
-    #     value: "2"
-    #   - name: edns0
-
   service:
     annotations:
       prometheus.io/path: "/api/v1/metrics/prometheus"
       prometheus.io/port: "2020"
       prometheus.io/scrape: "true"
-
   serviceMonitor:
     enabled: true
-    namespace: monitoring
-
+    namespace: logging
   dashboards:
     enabled: true
     labelKey: grafana_dashboard
-
   ## https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/configuration-file
   config:
     service: |
@@ -36,13 +22,12 @@ fluent-bit:
           HTTP_Server On
           HTTP_Listen 0.0.0.0
           HTTP_Port {{ .Values.service.port }}
-
     ## https://docs.fluentbit.io/manual/pipeline/inputs
     inputs: |
       [INPUT]
           Name tail
           Path /var/log/containers/*.log
-          Parser docker
+          Parser docker_no_time
           Tag kube.*
           Mem_Buf_Limit 5MB
           Skip_Long_Lines On
@@ -52,7 +37,6 @@ fluent-bit:
           Tag host.*
           Systemd_Filter _SYSTEMD_UNIT=kubelet.service
           Read_From_Tail On
-
     ## https://docs.fluentbit.io/manual/pipeline/filters
     filters: |
       [FILTER]
@@ -62,7 +46,6 @@ fluent-bit:
           Keep_Log Off
           K8S-Logging.Parser On
           K8S-Logging.Exclude On
-
     ## https://docs.fluentbit.io/manual/pipeline/outputs
     outputs: |
       [OUTPUT]
@@ -72,15 +55,6 @@ fluent-bit:
           Retry_Limit 10
           Replace_Dots On
           Trace_Error On
-
-      [OUTPUT]
-          Name es
-          Match host.*
-          Host es.belfast.blah.cloud.
-          Logstash_Prefix node
-          Retry_Limit 10
-          Trace_Error On
-
     ## https://docs.fluentbit.io/manual/pipeline/parsers
     customParsers: |
       [PARSER]
