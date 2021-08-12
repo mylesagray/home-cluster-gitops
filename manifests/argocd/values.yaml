@@ -71,6 +71,10 @@ argo-cd:
       maxReplicas: 5
       targetCPUUtilizationPercentage: 75
       targetMemoryUtilizationPercentage: 75
+    resources:
+      requests:
+        cpu: 250m
+        memory: 128Mi
     # affinity:
     #   podAntiAffinity:
     #     requiredDuringSchedulingIgnoredDuringExecution:
@@ -101,6 +105,20 @@ argo-cd:
       maxReplicas: 3
       targetCPUUtilizationPercentage: 75
       targetMemoryUtilizationPercentage: 75
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+    # affinity:
+    #   podAntiAffinity:
+    #     requiredDuringSchedulingIgnoredDuringExecution:
+    #     - labelSelector:
+    #         matchExpressions:
+    #         - key: app.kubernetes.io/name
+    #           operator: In
+    #           values:
+    #           - argocd-repo-server
+    #       topologyKey: "kubernetes.io/hostname"
     metrics:
       enabled: true
       serviceMonitor:
