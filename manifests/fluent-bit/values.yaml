@@ -10,6 +10,9 @@ fluent-bit:
   dashboards:
     enabled: true
     labelKey: grafana_dashboard
+  tolerations: 
+  - effect: NoSchedule
+  key: node-role.kubernetes.io/master
   ## https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/configuration-file
   config:
     service: |
