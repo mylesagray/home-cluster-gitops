@@ -26,7 +26,7 @@ traefik:
       enabled: true
     serviceMonitor:
       enabled: true
-      namespace: monitoring
+      namespace: ingress
       interval: 30s
   dashboard:
     enabled: true

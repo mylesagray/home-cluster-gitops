@@ -29,7 +29,7 @@ argo-cd:
       serviceMonitor:
         enabled: true
         interval: 15s
-        namespace: monitoring
+        namespace: argocd
     env:
       - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
         valueFrom:
@@ -56,7 +56,7 @@ argo-cd:
       serviceMonitor:
         enabled: true
         interval: 15s
-        namespace: monitoring
+        namespace: argocd
       rules:
         enabled: false
         spec: []
@@ -86,7 +86,7 @@ argo-cd:
       serviceMonitor:
         enabled: true
         interval: 15s
-        namespace: monitoring
+        namespace: argocd
     env:
       - name: "ARGOCD_EXEC_TIMEOUT"
         value: "5m"
@@ -94,19 +94,19 @@ argo-cd:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
   server:
-    replicas: 3
-    # autoscaling:
-    #   enabled: false
-    #   minReplicas: 1
-    #   maxReplicas: 5
-    #   targetCPUUtilizationPercentage: 50
-    #   targetMemoryUtilizationPercentage: 50
+    #replicas: 3
+    autoscaling:
+      enabled: true
+      minReplicas: 1
+      maxReplicas: 3
+      targetCPUUtilizationPercentage: 75
+      targetMemoryUtilizationPercentage: 75
     metrics:
       enabled: true
       serviceMonitor:
         enabled: true
         interval: 15s
-        namespace: monitoring
+        namespace: argocd
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
