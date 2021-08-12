@@ -7,7 +7,7 @@ velero:
       config:
         region: minio
         s3ForcePathStyle: true
-        s3Url: https://minio.belfast.blah.cloud
+        s3Url: https://minio.belfast.blah.cloud.
     volumeSnapshotLocation:
       name: default
       config:
