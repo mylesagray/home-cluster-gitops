@@ -146,6 +146,11 @@ make cleanup
 * Refactor namespaces
 * Refactor Apps into Projects
 * Deploy from tags/branches rather than master
+* Merge [tanzu-cluster-gitops](https://github.com/mylesagray/tanzu-cluster-gitops) with this repo and use Kustomized Helm to deploy to different clusters as Phase 1
+  * <https://medium.com/dzerolabs/turbocharge-argocd-with-app-of-apps-pattern-and-kustomized-helm-ea4993190e7c>
+  * Phase 2: Explore using `ApplicationSet` controller to supercede Kustomized Helm: <https://github.com/argoproj-labs/applicationset>
+    * <https://argocd-applicationset.readthedocs.io/en/stable/Geting-Started/>
+    * Requires building ApplicationSet Controller for ARM64
 
 ### Security
 
