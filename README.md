@@ -39,12 +39,12 @@ helm upgrade --install sealed-secrets -n kube-system ./manifests/sealed-secrets 
 
 ```sh
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/docker-creds.yaml > manifests/registry-creds/docker-creds-sealed.yaml
-kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/argocd-secret-rak8s.yaml > manifests/argocd/templates/argocd-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/home/argocd-secret.yaml > manifests/argocd/templates/argocd-sealed-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/argocd-github-secret.yaml > manifests/argocd/templates/argocd-github-sealed-secret.yaml
-kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/argocd-rak8s-secret.yaml > manifests/argocd/templates/argocd-rak8s-sealed-secret.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/home/argocd-rak8s-cluster-secret.yaml > manifests/argocd/templates/argocd-rak8s-cluster-sealed-secret.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/argocd-notifications-secret.yaml > manifests/argocd-notifications/templates/argocd-notifications-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/renovate-secret.yaml > manifests/renovate/templates/renovate-sealed-secret.yaml
-kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/external-dns-secret.yaml > manifests/external-dns/templates/external-dns-secret-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/home/external-dns-secret.yaml > manifests/external-dns/templates/external-dns-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/keycloak-secret.yaml > manifests/keycloak/templates/keycloak-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/keycloak-postgres-secret.yaml > manifests/keycloak/templates/keycloak-postgres-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/argo-workflows-sso.yaml  > manifests/argocd-workflows/templates/argo-workflows-sso-sealed.yaml
