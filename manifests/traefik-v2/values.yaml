@@ -7,6 +7,7 @@ traefik:
   ingressClass:
     enabled: true
     isDefaultClass: true
+    fallbackApiVersion: "v1"
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
