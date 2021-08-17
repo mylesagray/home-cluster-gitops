@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: quake
+  name: 2048
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "7"
@@ -12,12 +12,12 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: manifests/quake
+    path: manifests/2048
     directory:
       recurse: true
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: quake
+    namespace: 2048-game
   syncPolicy:
     automated:
       prune: true

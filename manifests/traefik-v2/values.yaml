@@ -34,9 +34,9 @@ traefik:
     enabled: true
     token: "00b958f6-2c73-473d-a765-58ea352bc094"
     dashboard: true
-  experimental:
-    kubernetesGateway:
-      enabled: true
+  # experimental:
+  #   kubernetesGateway:
+  #     enabled: true
   ports:
     web:
       redirectTo: websecure
