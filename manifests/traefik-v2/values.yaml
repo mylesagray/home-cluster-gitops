@@ -7,20 +7,6 @@ traefik:
   # ingressClass:
   #   enabled: true
   #   isDefaultClass: true
-  pilot:
-    enabled: true
-    token: "00b958f6-2c73-473d-a765-58ea352bc094"
-    dashboard: true
-  ingressRoute:
-    dashboard:
-      enabled: true
-      annotations: 
-        cert-manager.io/cluster-issuer: letsencrypt-live
-        kubernetes.io/ingress.class: traefik
-  providers:
-    kubernetesIngress:
-      publishedService:
-        enabled: true
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -34,3 +20,37 @@ traefik:
   tolerations:
   - effect: NoSchedule
     key: node-role.kubernetes.io/master
+  ingressRoute:
+    dashboard:
+      enabled: true
+      annotations: 
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+        kubernetes.io/ingress.class: traefik
+  providers:
+    kubernetesIngress:
+      publishedService:
+        enabled: true
+  pilot:
+    enabled: true
+    token: "00b958f6-2c73-473d-a765-58ea352bc094"
+    dashboard: true
+  experimental:
+    kubernetesGateway:
+      enabled: true
+  ports:
+    web:
+      redirectTo: websecure
+    websecure:
+      tls:
+        enabled: true
+  tlsOptions:
+    default:
+      minVersion: VersionTLS12
+      preferServerCipherSuites: true
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305

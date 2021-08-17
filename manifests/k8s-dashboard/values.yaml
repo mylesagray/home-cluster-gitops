@@ -5,7 +5,7 @@ kubernetes-dashboard:
     enabled: true
     annotations:
       kubernetes.io/ingress.class: traefik
-      cert-manager.io/cluster-issuer: letsencrypt-live
+      cert-manager.io/cluster-issuer: letsencrypt-staging
     hosts: 
     - k8s.apps.blah.cloud
     tls:

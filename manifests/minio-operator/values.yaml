@@ -5,7 +5,7 @@ minio-operator:
       host: minio-console.apps.blah.cloud
       annotations:
         kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-live
+        cert-manager.io/cluster-issuer: letsencrypt-staging
       tls:
       - secretName: minio-console-cert
         hosts:
