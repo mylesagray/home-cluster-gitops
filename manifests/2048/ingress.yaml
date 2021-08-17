@@ -14,7 +14,7 @@ spec:
       paths:
       - backend:
           service:
-            name: "2048-game"
+            name: 2048-game
             port:
               number: 80
         path: /
@@ -22,4 +22,4 @@ spec:
   tls:
   - hosts:
     - 2048.apps.blah.cloud
-    secretName: "2048-cert"
+    secretName: 2048-cert
