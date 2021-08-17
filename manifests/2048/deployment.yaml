@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "2048-deployment"
+  name: 2048-deployment
   namespace: "2048-game"
 spec:
   selector:
