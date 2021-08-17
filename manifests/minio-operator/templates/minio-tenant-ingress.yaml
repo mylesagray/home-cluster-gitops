@@ -5,6 +5,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
     kubernetes.io/ingress.class: traefik
     ingress.kubernetes.io/protocol: https
+    traefik.ingress.kubernetes.io/service.serversscheme: https
   name: minio-operator-tenant
   namespace: minio
 spec:
