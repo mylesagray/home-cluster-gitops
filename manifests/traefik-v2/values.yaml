@@ -1,12 +1,12 @@
 traefik:
   deployment:
-    replicas: 1
-  # podDisruptionBudget:
-  #   enabled: true
-  #   minAvailable: 2
-  # ingressClass:
-  #   enabled: true
-  #   isDefaultClass: true
+    replicas: 4
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 2
+  ingressClass:
+    enabled: true
+    isDefaultClass: true
   affinity:
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
