@@ -104,6 +104,7 @@ make cleanup
 
 ### Apps
 
+* Add Oil Monitor app <https://github.com/mylesagray/boilerjuice-tank-api>
 * ~~Move from traefik to traefik + cert-manager for ingress and TLS~~
   * ~~Traefik ~HA mode?~~
     * ~~<https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>~~
