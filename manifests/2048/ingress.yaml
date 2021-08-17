@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
-    kubernetes.io/ingress.class: traefik
   name: 2048game
   namespace: "2048-game"
 spec:
