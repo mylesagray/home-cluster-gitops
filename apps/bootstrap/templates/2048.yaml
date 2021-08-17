@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 2048
+  name: "2048"
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "7"
