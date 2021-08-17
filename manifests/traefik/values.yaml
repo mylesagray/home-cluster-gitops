@@ -33,7 +33,7 @@ traefik:
     domain: "traefik.apps.blah.cloud"
     ingress:
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-live
         kubernetes.io/ingress.class: traefik
       tls:
         - hosts:

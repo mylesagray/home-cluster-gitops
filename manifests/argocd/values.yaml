@@ -138,7 +138,7 @@ argo-cd:
         - argocd.apps.blah.cloud
         https: false
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-staging
+          cert-manager.io/cluster-issuer: letsencrypt-live
           kubernetes.io/ingress.class: traefik
         ingressClassName: "traefik"
         tls:
@@ -151,7 +151,7 @@ argo-cd:
         - argocd.apps.blah.cloud
         https: false
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-staging
+          cert-manager.io/cluster-issuer: letsencrypt-live
           kubernetes.io/ingress.class: traefik
         ingressClassName: "traefik"
         tls:

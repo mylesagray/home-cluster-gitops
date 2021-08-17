@@ -12,7 +12,7 @@ keycloak:
     ingressClassName: "traefik"
     annotations:
       kubernetes.io/ingress.class: traefik
-      cert-manager.io/cluster-issuer: letsencrypt-staging
+      cert-manager.io/cluster-issuer: letsencrypt-live
     tls: true
   extraEnvVars:
     - name: KEYCLOAK_FRONTEND_URL

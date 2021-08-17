@@ -6,7 +6,7 @@ kube-prometheus-stack:
       - grafana.apps.blah.cloud
       annotations:
         kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-live
       tls:
       - secretName: grafana-cert
         hosts:
@@ -47,7 +47,7 @@ kube-prometheus-stack:
       ingressClassName: traefik
       annotations:
         kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-live
       tls:
       - secretName: prometheus-cert
         hosts:
@@ -60,7 +60,7 @@ kube-prometheus-stack:
       ingressClassName: traefik
       annotations:
         kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-live
       tls:
       - secretName: thanos-cert
         hosts:
@@ -111,7 +111,7 @@ kube-prometheus-stack:
       ingressClassName: traefik
       annotations:
         kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-live
       tls:
       - secretName: alertmanager-cert
         hosts:
