@@ -1,9 +1,9 @@
 traefik:
   deployment:
-    replicas: 4
-  podDisruptionBudget:
-    enabled: true
-    minAvailable: 2
+    replicas: 1
+  # podDisruptionBudget:
+  #   enabled: true
+  #   minAvailable: 2
   # ingressClass:
   #   enabled: true
   #   isDefaultClass: true
