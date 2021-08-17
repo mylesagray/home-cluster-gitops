@@ -14,7 +14,7 @@ spec:
       paths:
       - backend:
           service:
-            name: 2048game
+            name: game-2048
             port:
               number: 80
         path: /
