@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: 2048-game
+  name: 2048game
   namespace: "2048-game"
 spec:
   type: ClusterIP
