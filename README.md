@@ -110,6 +110,8 @@ make cleanup
     * ~~<https://github.com/MySocialApp/kubernetes-helm-chart-traefik>~~
   * ~~Use cert-manager for TLS with DNS-01 challenges~~
   * ~~Use IngressClass for Traefik rather than making it a default IngressClass~~
+    * Update all Ingress objects to use IngressClass explicitly
+    * Migrate Ingress objects to v1
     * Investigate reloading Traefik when Cert-Manager changes a cert
       * <https://github.com/mmatur/traefik-cert-manager>
       * <https://www.padok.fr/en/blog/traefik-kubernetes-certmanager>
