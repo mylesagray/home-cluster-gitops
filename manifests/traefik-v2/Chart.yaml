@@ -1,5 +1,5 @@
 apiVersion: v2
-name: traefik-v2
+name: traefik
 version: 0.0.1
 dependencies:
 - name: traefik
