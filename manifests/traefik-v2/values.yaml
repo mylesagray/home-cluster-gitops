@@ -30,6 +30,8 @@ traefik:
     kubernetesIngress:
       publishedService:
         enabled: true
+  additionalArguments:
+    - --serversTransport.insecureSkipVerify=true
   pilot:
     enabled: true
     token: "3226b582-d09d-44ef-b0a9-c1ed2432b9b3"
