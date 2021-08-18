@@ -8,7 +8,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: oil-monitor
+    app.kubernetes.io/name: oil-monitor
   ports:
   - name: http
     port: 8080

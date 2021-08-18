@@ -14,9 +14,6 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: oil-monitor
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '8080'
     spec:
       containers:
       - envFrom:
