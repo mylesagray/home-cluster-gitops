@@ -10,7 +10,7 @@ spec:
   endpoints:
   - path: /metrics
     port: metrics
-    scrapeInterval: 15s
+    interval: 15s
   namespaceSelector:
     matchNames:
     - traefik
