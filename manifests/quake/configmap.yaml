@@ -12,7 +12,7 @@ data:
     bot:
       minPlayers: 3
     game:
-      motd: "Welcome to Critical Stack"
+      motd: "Welcome to Blah, Cloud"
       type: FreeForAll
       forceRespawn: false
       inactivity: 10m

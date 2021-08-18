@@ -9,7 +9,7 @@ spec:
   endpoints:
   - path: /metrics
     port: http
-    scrapeInterval: 120s
+    interval: 120s
   namespaceSelector:
     matchNames:
     - oil-monitor
