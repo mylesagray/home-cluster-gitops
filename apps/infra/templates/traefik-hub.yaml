@@ -28,3 +28,6 @@ spec:
   ignoreDifferences:
   - kind: Secrets
     name: hub-agent-certs
+    jsonPointers:
+    - /data/cert
+    - /data/key
