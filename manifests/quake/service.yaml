@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    run: quake
   name: quake
   namespace: quake
 spec:

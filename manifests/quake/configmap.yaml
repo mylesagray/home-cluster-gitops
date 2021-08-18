@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  labels:
+    run: quake
   name: quake3-server-config
   namespace: quake
 data:

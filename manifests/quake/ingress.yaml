@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-live
+  labels:
+    run: quake
   name: quake
   namespace: quake
 spec:

@@ -2,13 +2,14 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
-    app.kubernetes.io/name: fluent-bit
+    app.kubernetes.io/name: oil-monitor
   name: oil-monitor
   namespace: oil-monitor
 spec:
   endpoints:
   - path: /metrics
     port: http
+    scrapeInterval: 120s
   namespaceSelector:
     matchNames:
     - oil-monitor

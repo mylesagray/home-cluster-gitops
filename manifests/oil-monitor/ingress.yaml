@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-live
+  labels:
+    app.kubernetes.io/name: oil-monitor
   name: oil-monitor
   namespace: oil-monitor
 spec:
