@@ -53,6 +53,7 @@ kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/argo-workflows-minio-minio.yam
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/minio-tenant-secret.yaml  > manifests/minio-operator/templates/minio-tenant-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/cloudflare-api-token.yaml  > manifests/cert-manager/templates/cloudflare-api-token-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/boilerjuice-creds.yaml > manifests/oil-monitor/boilerjuice-creds-sealed.yaml
 ```
 
 #### Backup seal key

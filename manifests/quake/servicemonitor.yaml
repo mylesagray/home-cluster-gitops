@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    run: quake
+  name: quake
+  namespace: quake
+spec:
+  endpoints:
+  - path: /metrics
+    port: client
+  namespaceSelector:
+    matchNames:
+    - quake
+    matchLabels:
+      run: quake

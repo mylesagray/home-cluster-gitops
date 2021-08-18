@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oil-monitor
+  namespace: oil-monitor
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: oil-monitor
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: oil-monitor
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8080'
+    spec:
+      containers:
+      - envFrom:
+        - secretRef:
+            name: boilerjuice-creds
+        image: ghcr.io/mylesagray/boilerjuice-tank
+        name: api-server
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        resources:
+          limits:
+            cpu: 200m
+            memory: 50Mi

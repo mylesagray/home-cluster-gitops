@@ -3,22 +3,22 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-live
-  name: quake
-  namespace: quake
+  name: oil-monitor
+  namespace: oil-monitor
 spec:
   ingressClassName: traefik
   rules:
-  - host: quake.apps.blah.cloud
+  - host: oil.apps.blah.cloud
     http:
       paths:
       - backend:
           service:
-            name: quake
+            name: oil-monitor
             port:
               number: 8080
         path: /
-        pathType: ImplementationSpecific
+        pathType: Prefix
   tls:
   - hosts:
-    - quake.apps.blah.cloud
-    secretName: quake-cert
+      - oil.apps.blah.cloud
+    secretName: oil-monitor-cert

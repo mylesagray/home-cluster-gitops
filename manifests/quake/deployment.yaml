@@ -12,9 +12,6 @@ spec:
     metadata:
       labels:
         run: quake
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '8080'
     spec:
       containers:
       - command:
