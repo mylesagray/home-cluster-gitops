@@ -12,5 +12,6 @@ spec:
   namespaceSelector:
     matchNames:
     - quake
+  selector:
     matchLabels:
       run: quake
