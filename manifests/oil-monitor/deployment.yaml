@@ -26,7 +26,3 @@ spec:
         name: api-server
         ports:
         - containerPort: 8080
-        resources:
-          limits:
-            cpu: 200m
-            memory: 50Mi
