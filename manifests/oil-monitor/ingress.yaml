@@ -19,7 +19,7 @@ spec:
             port:
               number: 8080
         path: /
-        pathType: Prefix
+        pathType: ImplementationSpecific
   tls:
   - hosts:
       - oil.apps.blah.cloud

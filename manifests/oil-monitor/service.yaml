@@ -6,15 +6,10 @@ metadata:
   name: oil-monitor
   namespace: oil-monitor
 spec:
+  type: ClusterIP
   selector:
     app: oil-monitor
-  type: ClusterIP
-  sessionAffinity: None
-  sessionAffinityConfig:
-    clientIP:
-      timeoutSeconds: 10800
   ports:
   - name: http
-    protocol: TCP
     port: 8080
     targetPort: 8080
