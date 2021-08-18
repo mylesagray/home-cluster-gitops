@@ -22,3 +22,4 @@ external-dns:
   logLevel: info
   logFormat: json
   policy: sync
+  annotationFilter: "external-dns.alpha.kubernetes.io/exclude notin (true)"

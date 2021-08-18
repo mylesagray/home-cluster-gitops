@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
+    external-dns.alpha.kubernetes.io/exclude: 'true'
     hub.traefik.io/enable-acme: "true"
   name: 2048game-gslb
   namespace: "2048-game"
