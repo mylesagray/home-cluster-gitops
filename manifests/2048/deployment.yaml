@@ -14,7 +14,7 @@ spec:
         app: "2048"
     spec:
       containers:
-      - image: harbor.blah.cloud/mylesagray/doge2048:latest
+      - image: harbor.blah.cloud/library/doge2048:latest
         name: "2048"
         ports:
         - containerPort: 80
