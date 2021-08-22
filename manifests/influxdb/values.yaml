@@ -14,7 +14,5 @@ influxdb:
     className: "traefik"
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-live
-    tls:
-    - secretName: influxdb-cert
-      hosts:
-      - influxdb.apps.blah.cloud
+    secretName: influxdb-cert
+    tls: true
