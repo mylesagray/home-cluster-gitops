@@ -1,4 +1,6 @@
 influxdb:
+  image:
+    tag: "1.8.9"
   setDefaultUser:
     enabled: true
     image: lucashalbert/curl:arm64v8-7.76.1-r0
