@@ -1,0 +1,17 @@
+influxdb2:
+  image:
+    tag: 2.0.8-alpine
+  adminUser:
+    organization: "blahcloud"
+    bucket: "default"
+    user: "myles"
+  ingress:
+    enabled: true
+    hostname: influxdb.apps.blah.cloud
+    ingressClassName: "traefik"
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-live
+    tls:
+    - secretName: influxdb-cert
+      hosts:
+      - influxdb.apps.blah.cloud
