@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tf
+spec:
+  containers:
+    - name: nvidia
+      image: jitteam/jetson-nano-tf-gpu:latest
+      command: [ "sleep" ]
+      args: [ "1d" ]
+  nodeSelector:
+    beta.devicetree.org/nvidia-jetson-nano: '1'
