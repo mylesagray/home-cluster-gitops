@@ -133,6 +133,7 @@ make cleanup
   * All above rely on ko builds for ARM: <https://github.com/google/ko/pull/211>
 * Build L4T base image for Jetson testing
 * Add default DB to InfluxDB
+  * Add consistent password to InfluxDB
 * Add some extra game modes to Quake
 * Add ingress for Traefik Dashboard
 
