@@ -63,6 +63,20 @@ argo-cd:
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - argocd-repo-server
+            topologyKey: "kubernetes.io/hostname"
+    resources:
+      requests:
+        cpu: 500m
+        memory: 512Mi
   repoServer:
     autoscaling:
       enabled: true
@@ -76,10 +90,8 @@ argo-cd:
         memory: 128Mi
     affinity:
       podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          podAffinityTerm:
-            labelSelector:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
               matchExpressions:
               - key: app.kubernetes.io/name
                 operator: In
@@ -111,15 +123,13 @@ argo-cd:
         memory: 64Mi
     affinity:
       podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          podAffinityTerm:
-            labelSelector:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
               matchExpressions:
               - key: app.kubernetes.io/name
                 operator: In
                 values:
-                - argocd-server
+                - argocd-repo-server
             topologyKey: "kubernetes.io/hostname"
     metrics:
       enabled: true
