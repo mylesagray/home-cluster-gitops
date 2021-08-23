@@ -132,6 +132,9 @@ make cleanup
   * Add KNative (needs ARM builds - <https://github.com/knative/serving/issues/8320>)
   * All above rely on ko builds for ARM: <https://github.com/google/ko/pull/211>
 * Build L4T base image for Jetson testing
+* Add default DB to InfluxDB
+* Add some extra game modes to Quake
+* Add ingress for Traefik Dashboard
 
 #### Availablility
 
@@ -148,6 +151,7 @@ make cleanup
 * Add cert-manager mixin <https://monitoring.mixins.dev/cert-manager/>
   * <https://gitlab.com/uneeq-oss/cert-manager-mixin>
   * Add grafana dashboards from <https://grafana.com/grafana/dashboards>
+  * Figure out how to reload grafana dashboards that are updated
 * ~~Add carlosedp Cluster Dashboard to Grafana~~
 
 ### Organisational
