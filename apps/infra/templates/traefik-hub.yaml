@@ -26,7 +26,8 @@ spec:
     syncOptions:
       - CreateNamespace=true
   ignoreDifferences:
-  - kind: Secrets
+  - group:
+    kind: Secret
     name: hub-agent-certs
     jsonPointers:
     - /data

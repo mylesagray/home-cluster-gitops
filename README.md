@@ -105,7 +105,7 @@ make cleanup
 
 ### Apps
 
-* Add Oil Monitor app <https://github.com/mylesagray/boilerjuice-tank-api>
+* ~~Add Oil Monitor app <https://github.com/mylesagray/boilerjuice-tank-api>~~
 * ~~Move from traefik to traefik + cert-manager for ingress and TLS~~
   * ~~Traefik ~HA mode?~~
     * ~~<https://blog.deimos.fr/2018/01/23/traefik-ha-helm-chart-with-le-on-k8s/>~~
@@ -123,7 +123,6 @@ make cleanup
   * For svc type LB: <https://kube-vip.io/usage/on-prem/#Flow>
 * Add OIDC provider
   * Pinniped? <https://pinniped.dev>
-* Add Renovate self-hosted
 * Add Argo Events
 * Add Argo Rollouts
 * Investigate Argo Operator
@@ -132,6 +131,12 @@ make cleanup
   * Add Tekton (needs ARM builds - <https://github.com/tektoncd/pipeline/issues/856>)
   * Add KNative (needs ARM builds - <https://github.com/knative/serving/issues/8320>)
   * All above rely on ko builds for ARM: <https://github.com/google/ko/pull/211>
+* Build L4T base image for Jetson testing
+
+#### Availablility
+
+* Make Prom stack HA
+* Ensure anti-affinity across all HA apps
 
 #### Ongoing
 
