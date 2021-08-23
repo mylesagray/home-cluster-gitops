@@ -71,7 +71,7 @@ argo-cd:
               - key: app.kubernetes.io/name
                 operator: In
                 values:
-                - argocd-repo-server
+                - argocd-application-controller
             topologyKey: "kubernetes.io/hostname"
     resources:
       requests:
@@ -129,7 +129,7 @@ argo-cd:
               - key: app.kubernetes.io/name
                 operator: In
                 values:
-                - argocd-repo-server
+                - argocd-server
             topologyKey: "kubernetes.io/hostname"
     metrics:
       enabled: true
