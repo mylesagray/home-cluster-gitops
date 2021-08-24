@@ -8,8 +8,6 @@ spec:
   containers:
     - name: jetson-ml
       image: nvcr.io/nvidia/l4t-ml:r32.6.1-py3
-      command: [ "sleep" ]
-      args: [ "1d" ]
       ports:
       - containerPort:  8888
         name:  http
