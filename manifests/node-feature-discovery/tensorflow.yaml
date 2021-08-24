@@ -17,8 +17,6 @@ spec:
       containers:
         - name: jetson-ml
           image: nvcr.io/nvidia/l4t-ml:r32.6.1-py3
-          command: [ "/bin/bash", "-c", "--" ]
-          args: [ "while true; do sleep 30; done;" ]
           livenessProbe:
             tcpSocket:
               port: 8888
