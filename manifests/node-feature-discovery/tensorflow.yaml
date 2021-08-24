@@ -1,20 +1,37 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: jetson-ml
+  name:  jetson-ml
   labels:
-    app: "jetson-ml"
+    app: jetson-ml
 spec:
-  containers:
-    - name: jetson-ml
-      image: nvcr.io/nvidia/l4t-ml:r32.6.1-py3
-      command: [ "/bin/bash", "-c", "--" ]
-      args: [ "while true; do sleep 30; done;" ]
-      ports:
-      - containerPort:  8888
-        name:  http
-  nodeSelector:
-    beta.devicetree.org/nvidia-jetson-nano: '1'
+  selector:
+    matchLabels:
+      app: jetson-ml
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jetson-ml
+    spec:
+      containers:
+        - name: jetson-ml
+          image: nvcr.io/nvidia/l4t-ml:r32.6.1-py3
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
+          livenessProbe:
+            tcpSocket:
+              port: 8888
+            initialDelaySeconds: 20
+            timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+            periodSeconds: 20
+          ports:
+          - containerPort:  8888
+            name:  http
+      nodeSelector:
+        beta.devicetree.org/nvidia-jetson-nano: '1'
 ---
 apiVersion: v1
 kind: Service
