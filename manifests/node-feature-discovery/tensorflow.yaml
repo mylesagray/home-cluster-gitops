@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: nvidia
-      image: jitteam/jetson-nano-tf-gpu:latest
+      image: nvcr.io/nvidia/l4t-tensorflow:r32.6.1-tf2.5-py3
       command: [ "sleep" ]
       args: [ "1d" ]
   nodeSelector:
