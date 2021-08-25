@@ -54,6 +54,7 @@ kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/minio-tenant-secret.yaml  > ma
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/cloudflare-api-token.yaml  > manifests/cert-manager/templates/cloudflare-api-token-sealed.yaml
 kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/boilerjuice-creds.yaml > manifests/oil-monitor/boilerjuice-creds-sealed.yaml
+kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/influxdb-auth.yaml > manifests/influxdb/templates/influxdb-auth-sealed.yaml
 ```
 
 #### Backup seal key
@@ -131,7 +132,8 @@ make cleanup
   * Add Tekton (needs ARM builds - <https://github.com/tektoncd/pipeline/issues/856>)
   * Add KNative (needs ARM builds - <https://github.com/knative/serving/issues/8320>)
   * All above rely on ko builds for ARM: <https://github.com/google/ko/pull/211>
-* Build L4T base image for Jetson testing
+* ~~Build L4T base image for Jetson testing~~
+  * Add Nvidia K8s Device Plugin (with custom ARM patches) <https://blogs.windriver.com/wind_river_blog/2020/06/nvidia-k8s-device-plugin-for-wind-river-linux/>
 * Add default DB to InfluxDB
   * Add consistent password to InfluxDB
 * Add some extra game modes to Quake

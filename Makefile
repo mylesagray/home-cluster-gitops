@@ -44,6 +44,7 @@ install-prereqs:
 	kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/cert-secret.yaml  > manifests/kube-prometheus-stack/templates/cert-secret-sealed.yaml
 	kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/cloudflare-api-token.yaml  > manifests/cert-manager/templates/cloudflare-api-token-sealed.yaml
 	kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/boilerjuice-creds.yaml > manifests/oil-monitor/boilerjuice-creds-sealed.yaml
+	kubeseal --format=yaml < ~/Desktop/ArgoCD-Secrets/influxdb-auth.yaml > manifests/influxdb/templates/influxdb-auth-sealed.yaml
 	git add .
 	git commit -m "ArgoCD secret regen"
 	git push

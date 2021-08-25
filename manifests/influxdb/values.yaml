@@ -4,6 +4,8 @@ influxdb:
   setDefaultUser:
     enabled: true
     image: curlimages/curl
+    user:
+      existingSecret: influxdb-auth
   startupProbe:
     enabled: true
   persistence:
