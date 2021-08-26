@@ -18,8 +18,8 @@ velero:
     secretContents:
       cloud: |
         [default]
-        aws_access_key_id = minio
-        aws_secret_access_key = minio123
+        aws_access_key_id = velero
+        aws_secret_access_key = velero123
   snapshotsEnabled: false
   deployRestic: true
   restic:
