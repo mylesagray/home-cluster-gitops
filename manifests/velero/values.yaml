@@ -1,5 +1,8 @@
 velero:
   upgradeCRDs: false
+  metrics:
+    serviceMonitor:
+      enabled: true
   configuration:
     provider: aws
     backupStorageLocation:
