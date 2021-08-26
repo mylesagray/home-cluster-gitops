@@ -31,6 +31,9 @@ spec:
             name:  http
       nodeSelector:
         beta.devicetree.org/nvidia-jetson-nano: '1'
+      tolerations:
+        - effect: NoSchedule
+        - key: gpunode
 ---
 apiVersion: v1
 kind: Service
