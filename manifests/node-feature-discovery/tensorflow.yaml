@@ -33,6 +33,7 @@ spec:
         beta.devicetree.org/nvidia-jetson-nano: '1'
       tolerations:
         - effect: NoSchedule
+          operator: Exists
         - key: gpunode
 ---
 apiVersion: v1
