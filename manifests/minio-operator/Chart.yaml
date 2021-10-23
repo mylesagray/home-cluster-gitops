@@ -3,5 +3,5 @@ name: minio-operator
 version: 0.0.1
 dependencies:
 - name: minio-operator
-  version: 4.3.1
+  version: 4.3.2
   repository: https://operator.min.io/
