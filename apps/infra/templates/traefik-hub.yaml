@@ -30,4 +30,5 @@ spec:
     kind: Secret
     name: hub-agent-certs
     jsonPointers:
-    - /data
+    - /data/cert
+    - /data/key

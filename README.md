@@ -106,6 +106,7 @@ make cleanup
 
 ### Apps
 
+* Add ArgoCD Image Updater <https://argocd-image-updater.readthedocs.io/en/stable/>
 * ~~Add Oil Monitor app <https://github.com/mylesagray/boilerjuice-tank-api>~~
 * ~~Move from traefik to traefik + cert-manager for ingress and TLS~~
   * ~~Traefik ~HA mode?~~
