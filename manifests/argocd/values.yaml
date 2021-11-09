@@ -4,8 +4,8 @@ argo-cd:
       createSecret: false
   global:
     image:
-      repository: alinbalutoiu/argocd
-      tag: v2.0.5
+      repository: rdelprete/argocd-arm64
+      tag: v2.1.3
     imagePullSecrets: 
       - name: docker-creds
   redis:
