@@ -14,8 +14,10 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: minio-hl
-              servicePort: http-minio
+              service:
+                name: minio-hl
+                port:
+                  name: http-minio
             path: /
   tls:
     - hosts:
