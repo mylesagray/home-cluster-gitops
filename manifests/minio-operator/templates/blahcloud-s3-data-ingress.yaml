@@ -15,9 +15,9 @@ spec:
         paths:
           - backend:
               service:
-                name: blahcloud-s3-hl
+                name: minio
                 port:
-                  name: http-minio
+                  name: https-minio
             path: /
             pathType: Prefix
   tls:
