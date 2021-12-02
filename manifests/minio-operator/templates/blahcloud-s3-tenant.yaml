@@ -19,8 +19,8 @@ metadata:
 #  name: my-custom-scheduler
 
 spec:
-  credsSecret:
-    name: minio-creds-secret
+  configuration:
+    name: storage-configuration
   ## Specification for MinIO Pool(s) in this Tenant.
   pools:
       ## Servers specifies the number of MinIO Tenant Pods / Servers in this pool.
