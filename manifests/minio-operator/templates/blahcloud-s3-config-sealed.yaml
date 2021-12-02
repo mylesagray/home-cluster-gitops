@@ -1,0 +1,17 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: storage-configuration
+  namespace: minio-blahcloud
+spec:
+  encryptedData:
+    config.env: AgA0vKf2e5a6GreEXIpHXcNGKM8488MUGo/N2EO53aduIKmuBR6XkHl/mLz9M1TTe34+NV9koa+JIIGbsuKPySvYxQwiNRt+kybT8R3mnXpHeNa0GvUhP1ikhswrLPJ/eD250Yi+xmt+7VY8Nk+R96Q2EZiLd8QrQUNjvRSxrN46SKnAYq7UHi4nZkq7dyJEo2tDKNjvw9yMzcS3Z2bQQcf+Rp7uho8oj06pWUnzzv5kTh+Y9FO0XAq2bw5z3NviYhT8NMwS6ZREm/bAyYIpgW8ypqBFUrNYhTaHERqd6nWaeVi0oiBDjQxwPsm42tQPJ0C+hAPl8ZOFTynzVY0YhU0kznS7BlerCGSjqn0sPmg2UkvyW+XOqT01ZeVZZ/DRCbON76RcpgSflrrucg+wSJvUqMvgdwEoSZIYUSUvTfMRNcGyWtFbIsnl+RfIyv6ObyiRp5AgRcqg3+1JkYJ+E9jv6hDPm51Qx5uKdfmPOJuCFXZlJmiGyrugK/I/suuRXsI0gkdp4bcK4pVAmBGU7p3mBiu2myWODur4fEnuYRod1rRjz2Z5W3nQipCTHpbytvYH/KwSFO4jWoqiD1Rb3cu9jFgnmmGnAp7QTUQjjXcXqKjzBxqWy+UVAGwDfjsxT6pQCJ0a+eyEsdTcwiEsPxW4WIcRr/s3D7rO4cY+vWKcEOmsyX8601xe8M81r9z2lueBbir8sSlzjvYIph5Y1KLJ0ABEgZepAPPsyARXxhmQY+1D6+SnTBK6phq7RCslODaNBMeXcyd7iXYK86CTT9GjxoYTQ28MIQHBO+UbOnMEaxHkK+2e3K2a6UQ/S2gmJtUMsieQ8aTD1vkMUC8CITZ/0cvgGpWmkMd0Hkk2wSd2hJYyIo2EPTQY2tLEtiPsqvKUOkM3CIhbv1C0lpPOm0MvhGk302svVqAYCPgT6euxSqwFfdEeZ6NZKzVwkokHoJtGGno5DYQMRql+PvdhIrDN+oLiI8KYRv1ORaTFtMNx7untIoMPSgMMhsVXQxs=
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: storage-configuration
+      namespace: minio-blahcloud
+    type: Opaque
+

@@ -19,6 +19,8 @@ metadata:
 #  name: my-custom-scheduler
 
 spec:
+  credsSecret:
+    name: storage-creds-secret
   configuration:
     name: storage-configuration
   ## Specification for MinIO Pool(s) in this Tenant.
