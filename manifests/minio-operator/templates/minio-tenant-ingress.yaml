@@ -15,9 +15,9 @@ spec:
         paths:
           - backend:
               service:
-                name: minio-hl
+                name: minio-console
                 port:
-                  name: http-minio
+                  name: https-console
             path: /
             pathType: Prefix
   tls:

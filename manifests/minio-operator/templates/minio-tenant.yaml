@@ -2,10 +2,10 @@
 apiVersion: minio.min.io/v2
 kind: Tenant
 metadata:
-  name: minio
+  name: blahcloud-s3
   ## Optionally pass labels to be applied to the statefulset pods
   labels:
-    app: minio
+    app: blahcloud-s3
   ## Annotations for MinIO Tenant Pods
   annotations:
     prometheus.io/path: /minio/v2/metrics/cluster
