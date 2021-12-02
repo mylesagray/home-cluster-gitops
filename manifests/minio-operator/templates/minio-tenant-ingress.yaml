@@ -19,6 +19,7 @@ spec:
                 port:
                   name: http-minio
             path: /
+            pathType: Prefix
   tls:
     - hosts:
         - s3.apps.blah.cloud
