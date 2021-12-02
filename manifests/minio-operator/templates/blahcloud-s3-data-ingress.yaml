@@ -6,8 +6,8 @@ metadata:
     kubernetes.io/ingress.class: traefik
     ingress.kubernetes.io/protocol: https
     traefik.ingress.kubernetes.io/service.serversscheme: https
-  name: minio-operator-tenant
-  namespace: minio
+  name: blahcloud-s3-data
+  namespace: minio-blahcloud
 spec:
   rules:
     - host: s3.apps.blah.cloud
@@ -15,12 +15,12 @@ spec:
         paths:
           - backend:
               service:
-                name: blahcloud-s3-console
+                name: blahcloud-s3-hl
                 port:
-                  name: https-console
+                  name: http-minio
             path: /
             pathType: Prefix
   tls:
     - hosts:
         - s3.apps.blah.cloud
-      secretName: minio-tenant-cert
+      secretName: blahcloud-s3-data-cert
