@@ -3,5 +3,5 @@ name: fluent-bit
 version: 0.0.1
 dependencies:
 - name: fluent-bit
-  version: 0.19.15
+  version: 0.19.16
   repository: https://fluent.github.io/helm-charts
