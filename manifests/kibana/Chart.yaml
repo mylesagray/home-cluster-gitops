@@ -3,5 +3,5 @@ name: kibana
 version: 0.0.1
 dependencies:
 - name: kibana
-  version: 7.16.2
+  version: 7.16.3
   repository: https://helm.elastic.co
