@@ -17,7 +17,7 @@ kubernetes-dashboard:
   metrics-server:
     enabled: true
     image:
-      repository: k8s.gcr.io/metrics-server-arm64
+      repository: k8s.gcr.io/metrics-server/metrics-server
     args:
       - --kubelet-insecure-tls
       - --kubelet-preferred-address-types=InternalIP
