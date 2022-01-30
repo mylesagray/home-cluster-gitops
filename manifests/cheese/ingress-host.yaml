@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cheese
@@ -12,22 +12,31 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: stilton
-          servicePort: http
+          service:
+            name: stilton
+            port:
+              name: http
+        pathType: ImplementationSpecific
   - host: cheddar.cheese.apps.blah.cloud
     http:
       paths:
       - path: /
         backend:
-          serviceName: cheddar
-          servicePort: http
+          service:
+            name: cheddar
+            port:
+              name: http
+        pathType: ImplementationSpecific
   - host: wensleydale.cheese.apps.blah.cloud
     http:
       paths:
       - path: /
         backend:
-          serviceName: wensleydale
-          servicePort: http
+          service:
+            name: wensleydale
+            port:
+              name: http
+        pathType: ImplementationSpecific
   tls:
   - secretName: cheese-host-cert
     hosts:
