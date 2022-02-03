@@ -49,6 +49,6 @@ keycloak:
   keycloakConfigCli:
     enabled: true
     image:
-      repository: quay.io/adorsys/keycloak-config-cli
+      repository: adorsys/keycloak-config-cli
       tag: v4.6.1-14.0.0
     existingConfigmap: "keycloak-config"
