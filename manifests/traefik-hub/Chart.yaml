@@ -3,5 +3,5 @@ name: traefik-hub
 version: 0.0.1
 dependencies:
 - name: hub
-  version: 0.8.2
+  version: 0.9.0
   repository: https://helm.traefik.io/hub
