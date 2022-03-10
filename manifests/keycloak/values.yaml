@@ -50,5 +50,5 @@ keycloak:
     enabled: true
     image:
       repository: adorsys/keycloak-config-cli
-      tag: v4.8.0-14.0.0
+      tag: v4.8.1-14.0.0
     existingConfigmap: "keycloak-config"
