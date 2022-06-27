@@ -14,6 +14,9 @@ argo-cd:
     enabled: true
     image:
       repository: harbor.blah.cloud/dockerhub/library/redis
+    haproxy:
+      image:
+        repository: harbor.blah.cloud/dockerhub/library/haproxy
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
