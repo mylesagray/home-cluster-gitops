@@ -3,12 +3,12 @@ argo-cd:
     secret:
       createSecret: false
   global:
-    image:
-      tag: latest
     imagePullSecrets: 
       - name: docker-creds
   redis:
     enabled: false
+    image:
+    repository: harbor.blah.cloud/dockerhub/library/redis
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
