@@ -7,13 +7,13 @@ argo-cd:
       - name: docker-creds
   redis:
     enabled: false
-    image:
-    repository: harbor.blah.cloud/dockerhub/library/redis
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
   redis-ha:
     enabled: true
+    image:
+      repository: harbor.blah.cloud/dockerhub/library/redis
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
