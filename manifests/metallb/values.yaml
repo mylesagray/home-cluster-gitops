@@ -10,7 +10,8 @@ metallb:
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
-    prometheus:
+    metrics:
+      enabled: true
       serviceMonitor:
         enabled: true
   speaker:
@@ -20,7 +21,8 @@ metallb:
     tolerations:
     - effect: NoSchedule
       key: node-role.kubernetes.io/master
-    prometheus:
+    metrics:
+      enabled: true
       serviceMonitor:
         enabled: true
   configInline:
