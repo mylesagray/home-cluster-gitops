@@ -41,7 +41,7 @@ keycloak:
   postgresql:
       image:
         repository: postgres
-        tag: 13.8
+        tag: 14.5
       existingSecret: "keycloak-postgresql"
       postgresqlDataDir: /data/pgdata
       persistence:
