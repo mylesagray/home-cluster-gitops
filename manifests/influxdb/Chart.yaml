@@ -3,5 +3,5 @@ name: influxdb
 version: 0.0.1
 dependencies:
 - name: influxdb
-  version: 4.12.0
+  version: 4.12.1
   repository: https://helm.influxdata.com/
