@@ -3,5 +3,5 @@ name: external-dns
 version: 0.0.1
 dependencies:
 - name: external-dns
-  version: 6.38.0
+  version: 8.9.2
   repository: https://charts.bitnami.com/bitnami
