@@ -3,5 +3,5 @@ name: metallb
 version: 0.0.1
 dependencies:
 - name: metallb
-  version: 3.0.12
+  version: 6.4.22
   repository: https://charts.bitnami.com/bitnami
